@@ -1,0 +1,158 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	C:\Users\-k0$ma3-\Documents\Assembly\two_way_traffic_light.asm
+	Object File:	C:\Users\-k0$ma3-\Documents\Assembly\two_way_traffic_light.hex
+	List File:	C:\Users\-k0$ma3-\Documents\Assembly\two_way_traffic_light.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:		N      0000	org 00h
+    2:	  0000			start:
+    3:	  0000	75 90 84	mov P1,#10000100b  ;;green light for road A
+    4:	  0003	12 00 1D	call five_sec
+    5:	  0006	75 90 00	mov P1,#00000000b  ;;clear bits in port 1
+    6:	  0009	75 90 48	mov P1,#01001000b	 ;;yellow light for road A and road B
+    7:	  000C	12 00 2A	call two_sec
+    8:	  000F	75 90 00	mov P1,#00000000b  ;;clear bits in port 1
+    9:	  0012	75 90 30	mov P1,#00110000b	 ;;green light for road B
+   10:	  0015	12 00 1D	call five_sec
+   11:	  0018	75 90 00	mov P1,#00000000b  ;;clear bits in port 1
+   12:	  001B	80 E3		jmp start
+   13:	  001D			five_sec:            ;;subroutine for five seconds delay
+   14:	  001D	79 78		PET:Mov R1,#120
+   15:	  001F	7A 00		    Mov R2,#0
+   16:	  0021	7B 26		    Mov R3,#38
+   17:	  0023	D9 FE		MEG:Djnz R1,MEG
+   18:	  0025	DA FC		    Djnz R2,MEG
+   19:	  0027	DB FA		    Djnz R3,MEG
+   20:	  0029	22		Ret
+   21:	  002A			two_sec:		;;sub-routine for two seconds delay
+   22:	  002A	79 FB		PET_1:Mov R1,#251
+   23:	  002C	7A 33		    Mov R2,#51
+   24:	  002E	7B 10		    Mov R3,#16
+   25:	  0030	D9 FE		MEG_1:Djnz R1,MEG_1
+   26:	  0032	DA FC		    Djnz R2,MEG_1
+   27:	  0034	DB FA		    Djnz R3,MEG_1
+   28:	  0036	22		Ret
+   29:				end
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+B				  DATA	      F0
+CY				  BIT	      D7
+DPH				  DATA	      83
+DPL				  DATA	      82
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+FIVE_SEC			  CODE	    001D	  13
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+MEG				  CODE	    0023	  17
+MEG_1				  CODE	    0030	  25
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PET				  CODE	    001D	  14
+PET_1				  CODE	    002A	  22
+PS				  BIT	      BC
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+RI				  BIT	      98
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+SCON				  DATA	      98
+SINT				  CODE	    0023
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0000	   2
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TWO_SEC				  CODE	    002A	  21
+TXD				  BIT	      B1
+WR				  BIT	      B6

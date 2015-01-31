@@ -1,0 +1,156 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	C:\Users\-k0$ma3-\Documents\Assembly\project_II\7_segment_display.asm
+	Object File:	C:\Users\-k0$ma3-\Documents\Assembly\project_II\7_segment_display.hex
+	List File:	C:\Users\-k0$ma3-\Documents\Assembly\project_II\7_segment_display.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:		N      0000	org 00h
+    2:	  0000	75 B0 00	mov p3,#00000000b	;clear port 3
+    3:	  0003			start:
+    4:	  0003	75 90 C6	mov p1,#11000110b	;show C
+    5:	  0006	D2 B0		setb p3.0			;set bit on port 3.0
+    6:	  0008	12 00 2D	call one_sec
+    7:	  000B	C2 B0		clr p3.0			;clear bit on port 3.0
+    8:	  000D	75 90 88	mov p1,#10001000b	;show A
+    9:	  0010	D2 B1		setb p3.1			;set bit on port 3.1
+   10:	  0012	12 00 2D	call one_sec
+   11:	  0015	C2 B1		clr p3.1			;clear bit on port 3.1
+   12:	  0017	75 90 8C	mov p1,#10001100b	;show P
+   13:	  001A	D2 B2		setb p3.2			;set bit on port 3.2
+   14:	  001C	12 00 2D	call one_sec
+   15:	  001F	C2 B2		clr p3.2			;clear bit on port 3.2
+   16:	  0021	75 90 92	mov p1,#10010010b	;show S
+   17:	  0024	D2 B3		setb p3.3			;set bit on port 3.3
+   18:	  0026	12 00 2D	call one_sec
+   19:	  0029	C2 B3		clr p3.3			;clear bit on port 3.3
+   20:	  002B	80 D6		jmp start
+   21:
+   22:	  002D			one_sec:
+   23:	  002D	79 7C		PET:Mov R1,#124
+   24:	  002F	7A 9A		    Mov R2,#154
+   25:	  0031	7B 08		    Mov R3,#8
+   26:	  0033	D9 FE		MEG:Djnz R1,MEG
+   27:	  0035	DA FC		    Djnz R2,MEG
+   28:	  0037	DB FA		    Djnz R3,MEG
+   29:	  0039	22		Ret
+   30:				end
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+B				  DATA	      F0
+CY				  BIT	      D7
+DPH				  DATA	      83
+DPL				  DATA	      82
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+MEG				  CODE	    0033	  26
+ONE_SEC				  CODE	    002D	  22
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PET				  CODE	    002D	  23
+PS				  BIT	      BC
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+RI				  BIT	      98
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+SCON				  DATA	      98
+SINT				  CODE	    0023
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0003	   3
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TXD				  BIT	      B1
+WR				  BIT	      B6

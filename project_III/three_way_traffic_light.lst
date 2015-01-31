@@ -1,0 +1,258 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	C:\Users\-k0$ma3-\Documents\Assembly\project_III\three_way_traffic_light.asm
+	Object File:	C:\Users\-k0$ma3-\Documents\Assembly\project_III\three_way_traffic_light.hex
+	List File:	C:\Users\-k0$ma3-\Documents\Assembly\project_III\three_way_traffic_light.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:				; ROAD A   ROAD B   ROAD C
+    2:		N      0000	org 00h
+    3:	  0000			start:
+    4:	  0000	75 90 00	mov p1,#00000000b	;clear port 1
+    5:	  0003	75 A0 00	mov p2,#00000000b	;clear port 2
+    6:	  0006	75 90 0C	mov p1,#00001100b	;R	R	G
+    7:	  0009	75 A0 01	mov p2,#00000001b
+    8:	  000C	12 01 1D	call six_sec
+    9:	  000F	75 90 00	mov p1,#00000000b	;clear port 1
+   10:	  0012	75 A0 00	mov p2,#00000000b	;clear port 2
+   11:	  0015	75 90 12	mov p1,#00010010b	;R	Y	Y with blinking effect
+   12:	  0018	75 A0 01	mov p2,#00000001b
+   13:	  001B	12 01 10	call one_sec
+   14:	  001E	75 90 00	mov p1,#00000000b	;clear port 1
+   15:	  0021	75 A0 00	mov p2,#00000000b	;clear port 2
+   16:	  0024	75 90 00	mov p1,#00000000b	;R	0	0 with blinking effect
+   17:	  0027	75 A0 01	mov p2,#00000001b
+   18:	  002A	12 01 10	call one_sec
+   19:	  002D	75 90 00	mov p1,#00000000b	;clear port 1
+   20:	  0030	75 A0 00	mov p2,#00000000b	;clear port 2
+   21:	  0033	75 90 12	mov p1,#00010010b	;R	Y	Y with blinking effect
+   22:	  0036	75 A0 01	mov p2,#00000001b
+   23:	  0039	12 01 10	call one_sec
+   24:	  003C	75 90 00	mov p1,#00000000b	;clear port 1
+   25:	  003F	75 A0 00	mov p2,#00000000b	;clear port 2
+   26:	  0042	75 90 00	mov p1,#00000000b	;R	0	0 with blinking effect
+   27:	  0045	75 A0 01	mov p2,#00000001b
+   28:	  0048	12 01 10	call one_sec
+   29:	  004B	75 90 00	mov p1,#00000000b	;clear port 1
+   30:	  004E	75 A0 00	mov p2,#00000000b	;clear port 2
+   31:	  0051	75 90 12	mov p1,#00010010b	;R	Y	Y with blinking effect
+   32:	  0054	75 A0 01	mov p2,#00000001b
+   33:	  0057	12 01 10	call one_sec
+   34:	  005A	75 90 00	mov p1,#00000000b	;clear port 1
+   35:	  005D	75 A0 00	mov p2,#00000000b	;clear port 2
+   36:	  0060	75 90 21	mov p1,#00100001b	;R	G	R
+   37:	  0063	75 A0 01	mov p2,#00000001b
+   38:	  0066	12 01 1D	call six_sec
+   39:	  0069	75 90 00	mov p1,#00000000b	;clear port 1
+   40:	  006C	75 A0 00	mov p2,#00000000b	;clear port 2
+   41:	  006F	75 90 11	mov p1,#00010001b	;Y	Y	R with blinking effect
+   42:	  0072	75 A0 02	mov p2,#00000010b
+   43:	  0075	12 01 10	call one_sec
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+ Line  I  Addr  Code            Source
+
+   44:	  0078	75 90 00	mov p1,#00000000b	;clear port 1
+   45:	  007B	75 A0 00	mov p2,#00000000b	;clear port 2
+   46:	  007E	75 90 01	mov p1,#00000001b	;0	0	R with blinking effect
+   47:	  0081	75 A0 00	mov p2,#00000000b
+   48:	  0084	12 01 10	call one_sec
+   49:	  0087	75 90 00	mov p1,#00000000b	;clear port 1
+   50:	  008A	75 A0 00	mov p2,#00000000b	;clear port 2
+   51:	  008D	75 90 11	mov p1,#00010001b	;Y	Y	R with blinking effect
+   52:	  0090	75 A0 02	mov p2,#00000010b
+   53:	  0093	12 01 10	call one_sec
+   54:	  0096	75 90 00	mov p1,#00000000b	;clear port 1
+   55:	  0099	75 A0 00	mov p2,#00000000b	;clear port 2
+   56:	  009C	75 90 01	mov p1,#00000001b	;0	0	R with blinking effect
+   57:	  009F	75 A0 00	mov p2,#00000000b
+   58:	  00A2	12 01 10	call one_sec
+   59:	  00A5	75 90 00	mov p1,#00000000b	;clear port 1
+   60:	  00A8	75 A0 00	mov p2,#00000000b	;clear port 2
+   61:	  00AB	75 90 11	mov p1,#00010001b	;Y	Y	R with blinking effect
+   62:	  00AE	75 A0 02	mov p2,#00000010b
+   63:	  00B1	12 01 10	call one_sec
+   64:	  00B4	75 90 00	mov p1,#00000000b	;clear port 1
+   65:	  00B7	75 A0 00	mov p2,#00000000b	;clear port 2
+   66:	  00BA	75 90 09	mov p1,#00001001b	;G	R	R
+   67:	  00BD	75 A0 04	mov p2,#00000100b
+   68:	  00C0	12 01 1D	call six_sec
+   69:	  00C3	75 90 00	mov p1,#00000000b	;clear port 1
+   70:	  00C6	75 A0 00	mov p2,#00000000b	;clear port 2
+   71:	  00C9	75 90 0A	mov p1,#00001010b	;Y	R	Y with blinking effect
+   72:	  00CC	75 A0 02	mov p2,#00000010b
+   73:	  00CF	12 01 10	call one_sec
+   74:	  00D2	75 90 00	mov p1,#00000000b	;clear port 1
+   75:	  00D5	75 A0 00	mov p2,#00000000b	;clear port 2
+   76:	  00D8	75 90 08	mov p1,#00001000b	;0	R	0 with blinking effect
+   77:	  00DB	75 A0 00	mov p2,#00000000b
+   78:	  00DE	12 01 10	call one_sec
+   79:	  00E1	75 90 00	mov p1,#00000000b	;clear port 1
+   80:	  00E4	75 A0 00	mov p2,#00000000b	;clear port 2
+   81:	  00E7	75 90 0A	mov p1,#00001010b	;Y	R	Y with blinking effect
+   82:	  00EA	75 A0 02	mov p2,#00000010b
+   83:	  00ED	12 01 10	call one_sec
+   84:	  00F0	75 90 00	mov p1,#00000000b	;clear port 1
+   85:	  00F3	75 A0 00	mov p2,#00000000b	;clear port 2
+   86:	  00F6	75 90 08	mov p1,#00001000b	;0	R	0 with blinking effect
+   87:	  00F9	75 A0 00	mov p2,#00000000b
+   88:	  00FC	12 01 10	call one_sec
+   89:	  00FF	75 90 00	mov p1,#00000000b	;clear port 1
+   90:	  0102	75 A0 00	mov p2,#00000000b	;clear port 2
+   91:	  0105	75 90 0A	mov p1,#00001010b	;Y	R	Y with blinking effect
+   92:	  0108	75 A0 02	mov p2,#00000010b
+   93:	  010B	12 01 10	call one_sec
+   94:	  010E	01 00		jmp start
+   95:
+   96:	  0110			one_sec:
+   97:	  0110	79 7C		PET:Mov R1,#124
+   98:	  0112	7A 9A		    Mov R2,#154
+   99:	  0114	7B 08		    Mov R3,#8
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+ Line  I  Addr  Code            Source
+
+  100:	  0116	D9 FE		MEG:Djnz R1,MEG
+  101:	  0118	DA FC		    Djnz R2,MEG
+  102:	  011A	DB FA		    Djnz R3,MEG
+  103:	  011C	22		Ret
+  104:
+  105:	  011D			six_sec:
+  106:	  011D			PET_1:
+  107:	  011D	79 F7			Mov R1,#247
+  108:	  011F	7A 99		    Mov R2,#153
+  109:	  0121	7B 2E		    Mov R3,#46
+  110:	  0123			MEG_1:
+  111:	  0123	D9 FE			Djnz R1,MEG_1
+  112:	  0125	DA FC		    Djnz R2,MEG_1
+  113:	  0127	DB FA		    Djnz R3,MEG_1
+  114:	  0129	22		Ret
+  115:				end
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 4
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+B				  DATA	      F0
+CY				  BIT	      D7
+DPH				  DATA	      83
+DPL				  DATA	      82
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+MEG				  CODE	    0116	 100
+MEG_1				  CODE	    0123	 110
+ONE_SEC				  CODE	    0110	  96
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PET				  CODE	    0110	  97
+PET_1				  CODE	    011D	 106
+PS				  BIT	      BC
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+RI				  BIT	      98
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 5
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+SCON				  DATA	      98
+SINT				  CODE	    0023
+SIX_SEC				  CODE	    011D	 105
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0000	   3
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TXD				  BIT	      B1
+WR				  BIT	      B6
