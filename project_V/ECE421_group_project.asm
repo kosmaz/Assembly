@@ -108,7 +108,7 @@ mov a,#':' ;move the colon character to accumulator-16
 call data_wrt
 ret
 
-first_name:
+second_name:
 mov a,#80h ;force cursor to the beginning of the first line
 call cmd_wrt
 mov a,#'A' ;move letter A to accumulator-1
@@ -164,7 +164,7 @@ mov a,#'2' ;move number 2 to accumulator-10
 call data_wrt
 ret
 
-second_name:
+third_name:
 mov a,#80h ;force cursor to the beginning of the first line
 call cmd_wrt
 mov a,#'O' ;move letter O to accumulator-1
@@ -221,60 +221,6 @@ call data_wrt
 mov a,#'6' ;move number 6 to accumulator-9
 call data_wrt
 mov a,#'3' ;move number 3 to accumulator-10
-call data_wrt
-ret
-
-third_name:
-mov a,#80h ;force cursor to the beginning of the first line
-call cmd_wrt
-mov a,#'N' ;move letter N to accumulator-1
-call data_wrt
-mov a,#'n' ;move letter n to accumulator-2
-call data_wrt
-mov a,#'a' ;move letter a to accumulator-3
-call data_wrt
-mov a,#'m' ;move letter m to accumulator-4
-call data_wrt
-mov a,#'a' ;move letter a to accumulator-5
-call data_wrt
-mov a,#'n' ;move letter n to accumulator-6
-call data_wrt
-mov a,#'i' ;move letter i to accumulator-7
-call data_wrt
-mov a,#' ' ;move space character to accumulator-8
-call data_wrt
-mov a,#'U' ;move letter U to accumulator-9
-call data_wrt
-mov a,#'.' ;move letter . to accumulator-10
-call data_wrt
-mov a,#' ' ;move space character to accumulator-11
-call data_wrt
-mov a,#'P' ;move letter P to accumulator-12
-call data_wrt
-mov a,#'.' ;move letter . to accumulator-13
-call data_wrt
-
-mov a,#0c0h	;move cursor to second line position 1
-call cmd_wrt
-mov a,#'2' ;move number 2 to accumulator-1
-call data_wrt
-mov a,#'0' ;move number 0 to accumulator-2
-call data_wrt
-mov a,#'1' ;move number 1 to accumulator-3
-call data_wrt
-mov a,#'1' ;move number 1 to accumulator-4
-call data_wrt
-mov a,#'3' ;move number 3 to accumulator-5
-call data_wrt
-mov a,#'6' ;move number 6 to accumulator-6
-call data_wrt
-mov a,#'4' ;move number 4 to accumulator-7
-call data_wrt
-mov a,#'0' ;move number 0 to accumulator-8
-call data_wrt
-mov a,#'6' ;move number 6 to accumulator-9
-call data_wrt
-mov a,#'4' ;move number 4 to accumulator-10
 call data_wrt
 ret
 
@@ -550,6 +496,64 @@ call data_wrt
 mov a,#'!' ;move character ! to accumulator-8
 call data_wrt
 mov a,#'!' ;move character ! to accumulator-9
+call data_wrt
+ret
+
+first_name:
+mov a,#80h ;force cursor to the beginning of the first line
+call cmd_wrt
+mov a,#'M' ;move letter M to accumulator-1
+call data_wrt
+mov a,#'o' ;move letter o to accumulator-2
+call data_wrt
+mov a,#'m' ;move letter m to accumulator-3
+call data_wrt
+mov a,#'a' ;move letter a to accumulator-4
+call data_wrt
+mov a,#'h' ;move letter h to accumulator-5
+call data_wrt
+mov a,#' ' ;move space character to accumulator-6
+call data_wrt
+mov a,#'O' ;move letter O to accumulator-7
+call data_wrt
+mov a,#'b' ;move letter b to accumulator-8
+call data_wrt
+mov a,#'i' ;move letter i to accumulator-9
+call data_wrt
+mov a,#'n' ;move letter n to accumulator-10
+call data_wrt
+mov a,#'n' ;move letter n to accumulator-11
+call data_wrt
+mov a,#'a' ;move letter a to accumulator-12
+call data_wrt
+mov a,#' ' ;move space character to accumulator-13
+call data_wrt
+mov a,#'G' ;move letter S to accumulator-14
+call data_wrt
+mov a,#'.' ;move the full-stop character to accumulator-15
+call data_wrt
+
+mov a,#0c0h	;move cursor to second line position 1
+call cmd_wrt
+mov a,#'2' ;move number 2 to accumulator-1
+call data_wrt
+mov a,#'0' ;move number 0 to accumulator-2
+call data_wrt
+mov a,#'1' ;move number 1 to accumulator-3
+call data_wrt
+mov a,#'1' ;move number 1 to accumulator-4
+call data_wrt
+mov a,#'3' ;move number 3 to accumulator-5
+call data_wrt
+mov a,#'6' ;move number 6 to accumulator-6
+call data_wrt
+mov a,#'4' ;move number 4 to accumulator-7
+call data_wrt
+mov a,#'0' ;move number 0 to accumulator-8
+call data_wrt
+mov a,#'0' ;move number 0 to accumulator-9
+call data_wrt
+mov a,#'9' ;move number 9 to accumulator-10
 call data_wrt
 ret
 

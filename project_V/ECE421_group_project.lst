@@ -27,40 +27,40 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
     7:
     8:				;;initialization procress
     9:	  0000	74 38		mov a,#38h ;use two lines and 5x7 matrix
-   10:	  0002	12 05 0E	call cmd_wrt
+   10:	  0002	12 05 18	call cmd_wrt
    11:	  0005	74 80		mov a,#80h ;force cursor to the beginning of the first line
-   12:	  0007	12 05 0E	call cmd_wrt
+   12:	  0007	12 05 18	call cmd_wrt
    13:	  000A	74 0E		mov a,#0eh ;display ON, cursor ON
-   14:	  000C	12 05 0E	call cmd_wrt
+   14:	  000C	12 05 18	call cmd_wrt
    15:	  000F	74 14		mov a,#14h ;shift cursor postion to the right
-   16:	  0011	12 05 0E	call cmd_wrt
+   16:	  0011	12 05 18	call cmd_wrt
    17:
    18:	  0014			start:
-   19:	  0014	12 03 98	call subject
-   20:	  0017	12 04 F7	call clearscreen
-   21:	  001A	12 03 E9	call lecturer
-   22:	  001D	12 04 F7	call clearscreen
+   19:	  0014	12 03 1A	call subject
+   20:	  0017	12 05 01	call clearscreen
+   21:	  001A	12 03 6B	call lecturer
+   22:	  001D	12 05 01	call clearscreen
    23:	  0020	12 00 4C	call main
-   24:	  0023	12 04 F7	call clearscreen
-   25:	  0026	12 00 F5	call first_name
-   26:	  0029	12 04 F7	call clearscreen
-   27:	  002C	12 01 78	call second_name
-   28:	  002F	12 04 F7	call clearscreen
-   29:	  0032	12 02 05	call third_name
-   30:	  0035	12 04 F7	call clearscreen
-   31:	  0038	12 02 83	call fourth_name
-   32:	  003B	12 04 F7	call clearscreen
-   33:	  003E	12 03 0B	call fifth_name
-   34:	  0041	12 04 F7	call clearscreen
-   35:	  0044	12 04 B5	call endline
-   36:	  0047	12 04 F7	call clearscreen
+   24:	  0023	12 05 01	call clearscreen
+   25:	  0026	12 04 79	call first_name
+   26:	  0029	12 05 01	call clearscreen
+   27:	  002C	12 00 F5	call second_name
+   28:	  002F	12 05 01	call clearscreen
+   29:	  0032	12 01 78	call third_name
+   30:	  0035	12 05 01	call clearscreen
+   31:	  0038	12 02 05	call fourth_name
+   32:	  003B	12 05 01	call clearscreen
+   33:	  003E	12 02 8D	call fifth_name
+   34:	  0041	12 05 01	call clearscreen
+   35:	  0044	12 04 37	call endline
+   36:	  0047	12 05 01	call clearscreen
    37:	  004A	80 C8		jmp start
    38:
    39:	  004C			main:
    40:	  004C	74 54		mov a,#'T' ;move letter T to accumulator-1
-   41:	  004E	12 05 00	call data_wrt
+   41:	  004E	12 05 0A	call data_wrt
    42:	  0051	74 48		mov a,#'H' ;move letter H to accumulator-2
-   43:	  0053	12 05 00	call data_wrt
+   43:	  0053	12 05 0A	call data_wrt
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
 
@@ -69,60 +69,60 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
  Line  I  Addr  Code            Source
 
    44:	  0056	74 49		mov a,#'I' ;move letter I to accumulator-3
-   45:	  0058	12 05 00	call data_wrt
+   45:	  0058	12 05 0A	call data_wrt
    46:	  005B	74 53		mov a,#'S' ;move letter S to accumulator-4
-   47:	  005D	12 05 00	call data_wrt
+   47:	  005D	12 05 0A	call data_wrt
    48:	  0060	74 20		mov a,#' ' ;move space character to accumulator-5
-   49:	  0062	12 05 00	call data_wrt
+   49:	  0062	12 05 0A	call data_wrt
    50:	  0065	74 49		mov a,#'I' ;move letter I to accumulator-6
-   51:	  0067	12 05 00	call data_wrt
+   51:	  0067	12 05 0A	call data_wrt
    52:	  006A	74 53		mov a,#'S' ;move letter S to accumulator-7
-   53:	  006C	12 05 00	call data_wrt
+   53:	  006C	12 05 0A	call data_wrt
    54:	  006F	74 20		mov a,#' ' ;move space character to the accumulator-8
-   55:	  0071	12 05 00	call data_wrt
+   55:	  0071	12 05 0A	call data_wrt
    56:	  0074	74 47		mov a,#'G' ;move letter G to accumulator-9
-   57:	  0076	12 05 00	call data_wrt
+   57:	  0076	12 05 0A	call data_wrt
    58:	  0079	74 52		mov a,#'R' ;move letter R to accumulator-10
-   59:	  007B	12 05 00	call data_wrt
+   59:	  007B	12 05 0A	call data_wrt
    60:	  007E	74 4F		mov a,#'O' ;move letter O to accumulator-11
-   61:	  0080	12 05 00	call data_wrt
+   61:	  0080	12 05 0A	call data_wrt
    62:	  0083	74 55		mov a,#'U' ;move letter U to accumulator-12
-   63:	  0085	12 05 00	call data_wrt
+   63:	  0085	12 05 0A	call data_wrt
    64:	  0088	74 50		mov a,#'P' ;move letter P to accumulator-13
-   65:	  008A	12 05 00	call data_wrt
+   65:	  008A	12 05 0A	call data_wrt
    66:	  008D	74 20		mov a,#' ' ;move space character to accumulator-14
-   67:	  008F	12 05 00	call data_wrt
+   67:	  008F	12 05 0A	call data_wrt
    68:	  0092	74 31		mov a,#'1' ;move letter 1 to accumulator-15
-   69:	  0094	12 05 00	call data_wrt
+   69:	  0094	12 05 0A	call data_wrt
    70:	  0097	74 33		mov a,#'3' ;move letter 3 to accumulator-16
-   71:	  0099	12 05 00	call data_wrt
+   71:	  0099	12 05 0A	call data_wrt
    72:
-   73:	  009C	12 05 3C	call slow_delay
+   73:	  009C	12 05 46	call slow_delay
    74:
    75:	  009F	74 C0		mov a,#0c0h	;move cursor to second line position 1
-   76:	  00A1	12 05 0E	call cmd_wrt
+   76:	  00A1	12 05 18	call cmd_wrt
    77:	  00A4	74 4D		mov a,#'M' ;move  letter M to accumulator-1
-   78:	  00A6	12 05 00	call data_wrt
+   78:	  00A6	12 05 0A	call data_wrt
    79:	  00A9	74 65		mov a,#'e' ;move letter e to accumulator-2
-   80:	  00AB	12 05 00	call data_wrt
+   80:	  00AB	12 05 0A	call data_wrt
    81:	  00AE	74 6D		mov a,#'m' ;move letter m to accumulator-3
-   82:	  00B0	12 05 00	call data_wrt
+   82:	  00B0	12 05 0A	call data_wrt
    83:	  00B3	74 62		mov a,#'b' ;move letter b to accumulator-4
-   84:	  00B5	12 05 00	call data_wrt
+   84:	  00B5	12 05 0A	call data_wrt
    85:	  00B8	74 65		mov a,#'e' ;move letter e to accumulator-5
-   86:	  00BA	12 05 00	call data_wrt
+   86:	  00BA	12 05 0A	call data_wrt
    87:	  00BD	74 72		mov a,#'r' ;move letter r to accumulator-6
-   88:	  00BF	12 05 00	call data_wrt
+   88:	  00BF	12 05 0A	call data_wrt
    89:	  00C2	74 73		mov a,#'s' ;move letter s to accumulator-7
-   90:	  00C4	12 05 00	call data_wrt
+   90:	  00C4	12 05 0A	call data_wrt
    91:	  00C7	74 20		mov a,#' ' ;move space character to the accumulator-8
-   92:	  00C9	12 05 00	call data_wrt
+   92:	  00C9	12 05 0A	call data_wrt
    93:	  00CC	74 49		mov a,#'I' ;move letter I to accumulator-9
-   94:	  00CE	12 05 00	call data_wrt
+   94:	  00CE	12 05 0A	call data_wrt
    95:	  00D1	74 6E		mov a,#'n' ;move letter n to accumulator-10
-   96:	  00D3	12 05 00	call data_wrt
+   96:	  00D3	12 05 0A	call data_wrt
    97:	  00D6	74 63		mov a,#'c' ;move letter c to accumulator-11
-   98:	  00D8	12 05 00	call data_wrt
+   98:	  00D8	12 05 0A	call data_wrt
    99:	  00DB	74 6C		mov a,#'l' ;move letter l to accumulator-12
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
@@ -131,61 +131,61 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  100:	  00DD	12 05 00	call data_wrt
+  100:	  00DD	12 05 0A	call data_wrt
   101:	  00E0	74 75		mov a,#'u' ;move letter u to accumulator-13
-  102:	  00E2	12 05 00	call data_wrt
+  102:	  00E2	12 05 0A	call data_wrt
   103:	  00E5	74 64		mov a,#'d' ;move letter d to accumulator-14
-  104:	  00E7	12 05 00	call data_wrt
+  104:	  00E7	12 05 0A	call data_wrt
   105:	  00EA	74 65		mov a,#'e' ;move letter e to accumulator-15
-  106:	  00EC	12 05 00	call data_wrt
+  106:	  00EC	12 05 0A	call data_wrt
   107:	  00EF	74 3A		mov a,#':' ;move the colon character to accumulator-16
-  108:	  00F1	12 05 00	call data_wrt
+  108:	  00F1	12 05 0A	call data_wrt
   109:	  00F4	22		ret
   110:
-  111:	  00F5			first_name:
+  111:	  00F5			second_name:
   112:	  00F5	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  113:	  00F7	12 05 0E	call cmd_wrt
+  113:	  00F7	12 05 18	call cmd_wrt
   114:	  00FA	74 41		mov a,#'A' ;move letter A to accumulator-1
-  115:	  00FC	12 05 00	call data_wrt
+  115:	  00FC	12 05 0A	call data_wrt
   116:	  00FF	74 6B		mov a,#'k' ;move letter k to accumulator-2
-  117:	  0101	12 05 00	call data_wrt
+  117:	  0101	12 05 0A	call data_wrt
   118:	  0104	74 75		mov a,#'u' ;move letter u to accumulator-3
-  119:	  0106	12 05 00	call data_wrt
+  119:	  0106	12 05 0A	call data_wrt
   120:	  0109	74 62		mov a,#'b' ;move letter b to accumulator-4
-  121:	  010B	12 05 00	call data_wrt
+  121:	  010B	12 05 0A	call data_wrt
   122:	  010E	74 75		mov a,#'u' ;move letter u to accumulator-5
-  123:	  0110	12 05 00	call data_wrt
+  123:	  0110	12 05 0A	call data_wrt
   124:	  0113	74 65		mov a,#'e' ;move letter e to accumulator-6
-  125:	  0115	12 05 00	call data_wrt
+  125:	  0115	12 05 0A	call data_wrt
   126:	  0118	74 7A		mov a,#'z' ;move letter z to accumulator-7
-  127:	  011A	12 05 00	call data_wrt
+  127:	  011A	12 05 0A	call data_wrt
   128:	  011D	74 65		mov a,#'e' ;move letter e to accumulator-8
-  129:	  011F	12 05 00	call data_wrt
+  129:	  011F	12 05 0A	call data_wrt
   130:	  0122	74 20		mov a,#' ' ;move space character to accumulator-9
-  131:	  0124	12 05 00	call data_wrt
+  131:	  0124	12 05 0A	call data_wrt
   132:	  0127	74 4B		mov a,#'K' ;move letter K to accumulator-10
-  133:	  0129	12 05 00	call data_wrt
+  133:	  0129	12 05 0A	call data_wrt
   134:	  012C	74 2E		mov a,#'.' ;move letter . to accumulator-11
-  135:	  012E	12 05 00	call data_wrt
+  135:	  012E	12 05 0A	call data_wrt
   136:	  0131	74 20		mov a,#' ' ;move space character to accumulator-12
-  137:	  0133	12 05 00	call data_wrt
+  137:	  0133	12 05 0A	call data_wrt
   138:	  0136	74 43		mov a,#'C' ;move letter C to accumulator-13
-  139:	  0138	12 05 00	call data_wrt
+  139:	  0138	12 05 0A	call data_wrt
   140:	  013B	74 2E		mov a,#'.' ;move letter . to accumulator-14
-  141:	  013D	12 05 00	call data_wrt
+  141:	  013D	12 05 0A	call data_wrt
   142:
   143:	  0140	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  144:	  0142	12 05 0E	call cmd_wrt
+  144:	  0142	12 05 18	call cmd_wrt
   145:	  0145	74 32		mov a,#'2' ;move number 2 to accumulator-1
-  146:	  0147	12 05 00	call data_wrt
+  146:	  0147	12 05 0A	call data_wrt
   147:	  014A	74 30		mov a,#'0' ;move number 0 to accumulator-2
-  148:	  014C	12 05 00	call data_wrt
+  148:	  014C	12 05 0A	call data_wrt
   149:	  014F	74 31		mov a,#'1' ;move number 1 to accumulator-3
-  150:	  0151	12 05 00	call data_wrt
+  150:	  0151	12 05 0A	call data_wrt
   151:	  0154	74 31		mov a,#'1' ;move number 1 to accumulator-4
-  152:	  0156	12 05 00	call data_wrt
+  152:	  0156	12 05 0A	call data_wrt
   153:	  0159	74 33		mov a,#'3' ;move number 3 to accumulator-5
-  154:	  015B	12 05 00	call data_wrt
+  154:	  015B	12 05 0A	call data_wrt
   155:	  015E	74 36		mov a,#'6' ;move number 6 to accumulator-6
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 4
@@ -194,61 +194,61 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  156:	  0160	12 05 00	call data_wrt
+  156:	  0160	12 05 0A	call data_wrt
   157:	  0163	74 34		mov a,#'4' ;move number 4 to accumulator-7
-  158:	  0165	12 05 00	call data_wrt
+  158:	  0165	12 05 0A	call data_wrt
   159:	  0168	74 30		mov a,#'0' ;move number 0 to accumulator-8
-  160:	  016A	12 05 00	call data_wrt
+  160:	  016A	12 05 0A	call data_wrt
   161:	  016D	74 36		mov a,#'6' ;move number 6 to accumulator-9
-  162:	  016F	12 05 00	call data_wrt
+  162:	  016F	12 05 0A	call data_wrt
   163:	  0172	74 32		mov a,#'2' ;move number 2 to accumulator-10
-  164:	  0174	12 05 00	call data_wrt
+  164:	  0174	12 05 0A	call data_wrt
   165:	  0177	22		ret
   166:
-  167:	  0178			second_name:
+  167:	  0178			third_name:
   168:	  0178	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  169:	  017A	12 05 0E	call cmd_wrt
+  169:	  017A	12 05 18	call cmd_wrt
   170:	  017D	74 4F		mov a,#'O' ;move letter O to accumulator-1
-  171:	  017F	12 05 00	call data_wrt
+  171:	  017F	12 05 0A	call data_wrt
   172:	  0182	74 6B		mov a,#'k' ;move letter k to accumulator-2
-  173:	  0184	12 05 00	call data_wrt
+  173:	  0184	12 05 0A	call data_wrt
   174:	  0187	74 6F		mov a,#'o' ;move letter o to accumulator-3
-  175:	  0189	12 05 00	call data_wrt
+  175:	  0189	12 05 0A	call data_wrt
   176:	  018C	74 79		mov a,#'y' ;move letter y to accumulator-4
-  177:	  018E	12 05 00	call data_wrt
+  177:	  018E	12 05 0A	call data_wrt
   178:	  0191	74 65		mov a,#'e' ;move letter e to accumulator-5
-  179:	  0193	12 05 00	call data_wrt
+  179:	  0193	12 05 0A	call data_wrt
   180:	  0196	74 20		mov a,#' ' ;move space character to accumulator-6
-  181:	  0198	12 05 00	call data_wrt
+  181:	  0198	12 05 0A	call data_wrt
   182:	  019B	74 43		mov a,#'C' ;move letter C to accumulator-7
-  183:	  019D	12 05 00	call data_wrt
+  183:	  019D	12 05 0A	call data_wrt
   184:	  01A0	74 68		mov a,#'h' ;move letter h to accumulator-8
-  185:	  01A2	12 05 00	call data_wrt
+  185:	  01A2	12 05 0A	call data_wrt
   186:	  01A5	74 69		mov a,#'i' ;move letter i to accumulator-9
-  187:	  01A7	12 05 00	call data_wrt
+  187:	  01A7	12 05 0A	call data_wrt
   188:	  01AA	74 64		mov a,#'d' ;move letter d to accumulator-10
-  189:	  01AC	12 05 00	call data_wrt
+  189:	  01AC	12 05 0A	call data_wrt
   190:	  01AF	74 65		mov a,#'e' ;move letter e to accumulator-11
-  191:	  01B1	12 05 00	call data_wrt
+  191:	  01B1	12 05 0A	call data_wrt
   192:	  01B4	74 72		mov a,#'r' ;move letter r to accumulator-12
-  193:	  01B6	12 05 00	call data_wrt
+  193:	  01B6	12 05 0A	call data_wrt
   194:	  01B9	74 61		mov a,#'a' ;move letter a to accumulator-13
-  195:	  01BB	12 05 00	call data_wrt
+  195:	  01BB	12 05 0A	call data_wrt
   196:	  01BE	74 20		mov a,#' ' ;move space character to accumulator-13
-  197:	  01C0	12 05 00	call data_wrt
+  197:	  01C0	12 05 0A	call data_wrt
   198:	  01C3	74 44		mov a,#'D' ;move letter D to accumulator-14
-  199:	  01C5	12 05 00	call data_wrt
+  199:	  01C5	12 05 0A	call data_wrt
   200:	  01C8	74 2E		mov a,#'.' ;move character . to accumulator-15
-  201:	  01CA	12 05 00	call data_wrt
+  201:	  01CA	12 05 0A	call data_wrt
   202:
   203:	  01CD	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  204:	  01CF	12 05 0E	call cmd_wrt
+  204:	  01CF	12 05 18	call cmd_wrt
   205:	  01D2	74 32		mov a,#'2' ;move number 2 to accumulator-1
-  206:	  01D4	12 05 00	call data_wrt
+  206:	  01D4	12 05 0A	call data_wrt
   207:	  01D7	74 30		mov a,#'0' ;move number 0 to accumulator-2
-  208:	  01D9	12 05 00	call data_wrt
+  208:	  01D9	12 05 0A	call data_wrt
   209:	  01DC	74 31		mov a,#'1' ;move number 1 to accumulator-3
-  210:	  01DE	12 05 00	call data_wrt
+  210:	  01DE	12 05 0A	call data_wrt
   211:	  01E1	74 31		mov a,#'1' ;move number 1 to accumulator-4
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 5
@@ -257,62 +257,62 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  212:	  01E3	12 05 00	call data_wrt
+  212:	  01E3	12 05 0A	call data_wrt
   213:	  01E6	74 33		mov a,#'3' ;move number 3 to accumulator-5
-  214:	  01E8	12 05 00	call data_wrt
+  214:	  01E8	12 05 0A	call data_wrt
   215:	  01EB	74 36		mov a,#'6' ;move number 6 to accumulator-6
-  216:	  01ED	12 05 00	call data_wrt
+  216:	  01ED	12 05 0A	call data_wrt
   217:	  01F0	74 34		mov a,#'4' ;move number 4 to accumulator-7
-  218:	  01F2	12 05 00	call data_wrt
+  218:	  01F2	12 05 0A	call data_wrt
   219:	  01F5	74 30		mov a,#'0' ;move number 0 to accumulator-8
-  220:	  01F7	12 05 00	call data_wrt
+  220:	  01F7	12 05 0A	call data_wrt
   221:	  01FA	74 36		mov a,#'6' ;move number 6 to accumulator-9
-  222:	  01FC	12 05 00	call data_wrt
+  222:	  01FC	12 05 0A	call data_wrt
   223:	  01FF	74 33		mov a,#'3' ;move number 3 to accumulator-10
-  224:	  0201	12 05 00	call data_wrt
+  224:	  0201	12 05 0A	call data_wrt
   225:	  0204	22		ret
   226:
-  227:	  0205			third_name:
+  227:	  0205			fourth_name:
   228:	  0205	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  229:	  0207	12 05 0E	call cmd_wrt
-  230:	  020A	74 4E		mov a,#'N' ;move letter N to accumulator-1
-  231:	  020C	12 05 00	call data_wrt
-  232:	  020F	74 6E		mov a,#'n' ;move letter n to accumulator-2
-  233:	  0211	12 05 00	call data_wrt
-  234:	  0214	74 61		mov a,#'a' ;move letter a to accumulator-3
-  235:	  0216	12 05 00	call data_wrt
-  236:	  0219	74 6D		mov a,#'m' ;move letter m to accumulator-4
-  237:	  021B	12 05 00	call data_wrt
-  238:	  021E	74 61		mov a,#'a' ;move letter a to accumulator-5
-  239:	  0220	12 05 00	call data_wrt
-  240:	  0223	74 6E		mov a,#'n' ;move letter n to accumulator-6
-  241:	  0225	12 05 00	call data_wrt
-  242:	  0228	74 69		mov a,#'i' ;move letter i to accumulator-7
-  243:	  022A	12 05 00	call data_wrt
-  244:	  022D	74 20		mov a,#' ' ;move space character to accumulator-8
-  245:	  022F	12 05 00	call data_wrt
-  246:	  0232	74 55		mov a,#'U' ;move letter U to accumulator-9
-  247:	  0234	12 05 00	call data_wrt
-  248:	  0237	74 2E		mov a,#'.' ;move letter . to accumulator-10
-  249:	  0239	12 05 00	call data_wrt
-  250:	  023C	74 20		mov a,#' ' ;move space character to accumulator-11
-  251:	  023E	12 05 00	call data_wrt
-  252:	  0241	74 50		mov a,#'P' ;move letter P to accumulator-12
-  253:	  0243	12 05 00	call data_wrt
-  254:	  0246	74 2E		mov a,#'.' ;move letter . to accumulator-13
-  255:	  0248	12 05 00	call data_wrt
-  256:
-  257:	  024B	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  258:	  024D	12 05 0E	call cmd_wrt
-  259:	  0250	74 32		mov a,#'2' ;move number 2 to accumulator-1
-  260:	  0252	12 05 00	call data_wrt
-  261:	  0255	74 30		mov a,#'0' ;move number 0 to accumulator-2
-  262:	  0257	12 05 00	call data_wrt
-  263:	  025A	74 31		mov a,#'1' ;move number 1 to accumulator-3
-  264:	  025C	12 05 00	call data_wrt
-  265:	  025F	74 31		mov a,#'1' ;move number 1 to accumulator-4
-  266:	  0261	12 05 00	call data_wrt
-  267:	  0264	74 33		mov a,#'3' ;move number 3 to accumulator-5
+  229:	  0207	12 05 18	call cmd_wrt
+  230:	  020A	74 45		mov a,#'E' ;move letter E to accumulator-1
+  231:	  020C	12 05 0A	call data_wrt
+  232:	  020F	74 7A		mov a,#'z' ;move letter z to accumulator-2
+  233:	  0211	12 05 0A	call data_wrt
+  234:	  0214	74 65		mov a,#'e' ;move letter e to accumulator-3
+  235:	  0216	12 05 0A	call data_wrt
+  236:	  0219	74 6E		mov a,#'n' ;move letter n to accumulator-4
+  237:	  021B	12 05 0A	call data_wrt
+  238:	  021E	74 77		mov a,#'w' ;move letter w to accumulator-5
+  239:	  0220	12 05 0A	call data_wrt
+  240:	  0223	74 61		mov a,#'a' ;move letter a to accumulator-6
+  241:	  0225	12 05 0A	call data_wrt
+  242:	  0228	74 6E		mov a,#'n' ;move letter n to accumulator-7
+  243:	  022A	12 05 0A	call data_wrt
+  244:	  022D	74 6E		mov a,#'n' ;move letter n to accumulator-8
+  245:	  022F	12 05 0A	call data_wrt
+  246:	  0232	74 65		mov a,#'e' ;move letter e to accumulator-9
+  247:	  0234	12 05 0A	call data_wrt
+  248:	  0237	74 20		mov a,#' ' ;move space character to accumulator-10
+  249:	  0239	12 05 0A	call data_wrt
+  250:	  023C	74 49		mov a,#'I' ;move letter I to accumulator-11
+  251:	  023E	12 05 0A	call data_wrt
+  252:	  0241	74 2E		mov a,#'.' ;move letter . to accumulator-12
+  253:	  0243	12 05 0A	call data_wrt
+  254:	  0246	74 20		mov a,#' ' ;move space character to accumulator-13
+  255:	  0248	12 05 0A	call data_wrt
+  256:	  024B	74 43		mov a,#'C' ;move letter C to accumulator-14
+  257:	  024D	12 05 0A	call data_wrt
+  258:	  0250	74 2E		mov a,#'.' ;move letter . to accumulator-15
+  259:	  0252	12 05 0A	call data_wrt
+  260:
+  261:	  0255	74 C0		mov a,#0c0h	;move cursor to second line position 1
+  262:	  0257	12 05 18	call cmd_wrt
+  263:	  025A	74 32		mov a,#'2' ;move number 2 to accumulator-1
+  264:	  025C	12 05 0A	call data_wrt
+  265:	  025F	74 30		mov a,#'0' ;move number 0 to accumulator-2
+  266:	  0261	12 05 0A	call data_wrt
+  267:	  0264	74 31		mov a,#'1' ;move number 1 to accumulator-3
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 6
 
@@ -320,62 +320,62 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  268:	  0266	12 05 00	call data_wrt
-  269:	  0269	74 36		mov a,#'6' ;move number 6 to accumulator-6
-  270:	  026B	12 05 00	call data_wrt
-  271:	  026E	74 34		mov a,#'4' ;move number 4 to accumulator-7
-  272:	  0270	12 05 00	call data_wrt
-  273:	  0273	74 30		mov a,#'0' ;move number 0 to accumulator-8
-  274:	  0275	12 05 00	call data_wrt
-  275:	  0278	74 36		mov a,#'6' ;move number 6 to accumulator-9
-  276:	  027A	12 05 00	call data_wrt
-  277:	  027D	74 34		mov a,#'4' ;move number 4 to accumulator-10
-  278:	  027F	12 05 00	call data_wrt
-  279:	  0282	22		ret
-  280:
-  281:	  0283			fourth_name:
-  282:	  0283	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  283:	  0285	12 05 0E	call cmd_wrt
-  284:	  0288	74 45		mov a,#'E' ;move letter E to accumulator-1
-  285:	  028A	12 05 00	call data_wrt
-  286:	  028D	74 7A		mov a,#'z' ;move letter z to accumulator-2
-  287:	  028F	12 05 00	call data_wrt
-  288:	  0292	74 65		mov a,#'e' ;move letter e to accumulator-3
-  289:	  0294	12 05 00	call data_wrt
-  290:	  0297	74 6E		mov a,#'n' ;move letter n to accumulator-4
-  291:	  0299	12 05 00	call data_wrt
-  292:	  029C	74 77		mov a,#'w' ;move letter w to accumulator-5
-  293:	  029E	12 05 00	call data_wrt
-  294:	  02A1	74 61		mov a,#'a' ;move letter a to accumulator-6
-  295:	  02A3	12 05 00	call data_wrt
-  296:	  02A6	74 6E		mov a,#'n' ;move letter n to accumulator-7
-  297:	  02A8	12 05 00	call data_wrt
-  298:	  02AB	74 6E		mov a,#'n' ;move letter n to accumulator-8
-  299:	  02AD	12 05 00	call data_wrt
-  300:	  02B0	74 65		mov a,#'e' ;move letter e to accumulator-9
-  301:	  02B2	12 05 00	call data_wrt
-  302:	  02B5	74 20		mov a,#' ' ;move space character to accumulator-10
-  303:	  02B7	12 05 00	call data_wrt
-  304:	  02BA	74 49		mov a,#'I' ;move letter I to accumulator-11
-  305:	  02BC	12 05 00	call data_wrt
-  306:	  02BF	74 2E		mov a,#'.' ;move letter . to accumulator-12
-  307:	  02C1	12 05 00	call data_wrt
-  308:	  02C4	74 20		mov a,#' ' ;move space character to accumulator-13
-  309:	  02C6	12 05 00	call data_wrt
-  310:	  02C9	74 43		mov a,#'C' ;move letter C to accumulator-14
-  311:	  02CB	12 05 00	call data_wrt
-  312:	  02CE	74 2E		mov a,#'.' ;move letter . to accumulator-15
-  313:	  02D0	12 05 00	call data_wrt
-  314:
-  315:	  02D3	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  316:	  02D5	12 05 0E	call cmd_wrt
-  317:	  02D8	74 32		mov a,#'2' ;move number 2 to accumulator-1
-  318:	  02DA	12 05 00	call data_wrt
-  319:	  02DD	74 30		mov a,#'0' ;move number 0 to accumulator-2
-  320:	  02DF	12 05 00	call data_wrt
-  321:	  02E2	74 31		mov a,#'1' ;move number 1 to accumulator-3
-  322:	  02E4	12 05 00	call data_wrt
-  323:	  02E7	74 31		mov a,#'1' ;move number 1 to accumulator-4
+  268:	  0266	12 05 0A	call data_wrt
+  269:	  0269	74 31		mov a,#'1' ;move number 1 to accumulator-4
+  270:	  026B	12 05 0A	call data_wrt
+  271:	  026E	74 33		mov a,#'3' ;move number 3 to accumulator-5
+  272:	  0270	12 05 0A	call data_wrt
+  273:	  0273	74 36		mov a,#'6' ;move number 6 to accumulator-6
+  274:	  0275	12 05 0A	call data_wrt
+  275:	  0278	74 34		mov a,#'4' ;move number 4 to accumulator-7
+  276:	  027A	12 05 0A	call data_wrt
+  277:	  027D	74 30		mov a,#'0' ;move number 0 to accumulator-8
+  278:	  027F	12 05 0A	call data_wrt
+  279:	  0282	74 36		mov a,#'6' ;move number 6 to accumulator-9
+  280:	  0284	12 05 0A	call data_wrt
+  281:	  0287	74 35		mov a,#'5' ;move number 5 to accumulator-10
+  282:	  0289	12 05 0A	call data_wrt
+  283:	  028C	22		ret
+  284:
+  285:	  028D			fifth_name:
+  286:	  028D	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  287:	  028F	12 05 18	call cmd_wrt
+  288:	  0292	74 4E		mov a,#'N' ;move letter N to accumulator-1
+  289:	  0294	12 05 0A	call data_wrt
+  290:	  0297	74 77		mov a,#'w' ;move letter w to accumulator-2
+  291:	  0299	12 05 0A	call data_wrt
+  292:	  029C	74 6F		mov a,#'o' ;move letter o to accumulator-3
+  293:	  029E	12 05 0A	call data_wrt
+  294:	  02A1	74 67		mov a,#'g' ;move letter g to accumulator-4
+  295:	  02A3	12 05 0A	call data_wrt
+  296:	  02A6	74 62		mov a,#'b' ;move letter b to accumulator-5
+  297:	  02A8	12 05 0A	call data_wrt
+  298:	  02AB	74 6F		mov a,#'o' ;move letter o to accumulator-6
+  299:	  02AD	12 05 0A	call data_wrt
+  300:	  02B0	74 20		mov a,#' ' ;move space character to accumulator-7
+  301:	  02B2	12 05 0A	call data_wrt
+  302:	  02B5	74 43		mov a,#'C' ;move letter C to accumulator-8
+  303:	  02B7	12 05 0A	call data_wrt
+  304:	  02BA	74 6F		mov a,#'o' ;move letter o to accumulator-9
+  305:	  02BC	12 05 0A	call data_wrt
+  306:	  02BF	74 6C		mov a,#'l' ;move letter l to accumulator-10
+  307:	  02C1	12 05 0A	call data_wrt
+  308:	  02C4	74 6C		mov a,#'l' ;move letter l to accumulator-11
+  309:	  02C6	12 05 0A	call data_wrt
+  310:	  02C9	74 69		mov a,#'i' ;move letter i to accumulator-12
+  311:	  02CB	12 05 0A	call data_wrt
+  312:	  02CE	74 6E		mov a,#'n' ;move letter n to accumulator-13
+  313:	  02D0	12 05 0A	call data_wrt
+  314:	  02D3	74 73		mov a,#'s' ;move letter s to accumulator-14
+  315:	  02D5	12 05 0A	call data_wrt
+  316:	  02D8	74 20		mov a,#' ' ;move space character to accumulator-15
+  317:	  02DA	12 05 0A	call data_wrt
+  318:	  02DD	74 4B		mov a,#'K' ;move letter K to accumulator-16
+  319:	  02DF	12 05 0A	call data_wrt
+  320:
+  321:
+  322:	  02E2	74 C0		mov a,#0c0h	;move cursor to second line position 1
+  323:	  02E4	12 05 18	call cmd_wrt
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 7
 
@@ -383,62 +383,62 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  324:	  02E9	12 05 00	call data_wrt
-  325:	  02EC	74 33		mov a,#'3' ;move number 3 to accumulator-5
-  326:	  02EE	12 05 00	call data_wrt
-  327:	  02F1	74 36		mov a,#'6' ;move number 6 to accumulator-6
-  328:	  02F3	12 05 00	call data_wrt
-  329:	  02F6	74 34		mov a,#'4' ;move number 4 to accumulator-7
-  330:	  02F8	12 05 00	call data_wrt
-  331:	  02FB	74 30		mov a,#'0' ;move number 0 to accumulator-8
-  332:	  02FD	12 05 00	call data_wrt
-  333:	  0300	74 36		mov a,#'6' ;move number 6 to accumulator-9
-  334:	  0302	12 05 00	call data_wrt
-  335:	  0305	74 35		mov a,#'5' ;move number 5 to accumulator-10
-  336:	  0307	12 05 00	call data_wrt
-  337:	  030A	22		ret
-  338:
-  339:	  030B			fifth_name:
-  340:	  030B	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  341:	  030D	12 05 0E	call cmd_wrt
-  342:	  0310	74 4E		mov a,#'N' ;move letter N to accumulator-1
-  343:	  0312	12 05 00	call data_wrt
-  344:	  0315	74 77		mov a,#'w' ;move letter w to accumulator-2
-  345:	  0317	12 05 00	call data_wrt
-  346:	  031A	74 6F		mov a,#'o' ;move letter o to accumulator-3
-  347:	  031C	12 05 00	call data_wrt
-  348:	  031F	74 67		mov a,#'g' ;move letter g to accumulator-4
-  349:	  0321	12 05 00	call data_wrt
-  350:	  0324	74 62		mov a,#'b' ;move letter b to accumulator-5
-  351:	  0326	12 05 00	call data_wrt
-  352:	  0329	74 6F		mov a,#'o' ;move letter o to accumulator-6
-  353:	  032B	12 05 00	call data_wrt
-  354:	  032E	74 20		mov a,#' ' ;move space character to accumulator-7
-  355:	  0330	12 05 00	call data_wrt
-  356:	  0333	74 43		mov a,#'C' ;move letter C to accumulator-8
-  357:	  0335	12 05 00	call data_wrt
-  358:	  0338	74 6F		mov a,#'o' ;move letter o to accumulator-9
-  359:	  033A	12 05 00	call data_wrt
-  360:	  033D	74 6C		mov a,#'l' ;move letter l to accumulator-10
-  361:	  033F	12 05 00	call data_wrt
-  362:	  0342	74 6C		mov a,#'l' ;move letter l to accumulator-11
-  363:	  0344	12 05 00	call data_wrt
-  364:	  0347	74 69		mov a,#'i' ;move letter i to accumulator-12
-  365:	  0349	12 05 00	call data_wrt
-  366:	  034C	74 6E		mov a,#'n' ;move letter n to accumulator-13
-  367:	  034E	12 05 00	call data_wrt
-  368:	  0351	74 73		mov a,#'s' ;move letter s to accumulator-14
-  369:	  0353	12 05 00	call data_wrt
-  370:	  0356	74 20		mov a,#' ' ;move space character to accumulator-15
-  371:	  0358	12 05 00	call data_wrt
-  372:	  035B	74 4B		mov a,#'K' ;move letter K to accumulator-16
-  373:	  035D	12 05 00	call data_wrt
-  374:
-  375:
-  376:	  0360	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  377:	  0362	12 05 0E	call cmd_wrt
-  378:	  0365	74 32		mov a,#'2' ;move number 2 to accumulator-1
-  379:	  0367	12 05 00	call data_wrt
+  324:	  02E7	74 32		mov a,#'2' ;move number 2 to accumulator-1
+  325:	  02E9	12 05 0A	call data_wrt
+  326:	  02EC	74 30		mov a,#'0' ;move number 0 to accumulator-2
+  327:	  02EE	12 05 0A	call data_wrt
+  328:	  02F1	74 31		mov a,#'1' ;move number 1 to accumulator-3
+  329:	  02F3	12 05 0A	call data_wrt
+  330:	  02F6	74 31		mov a,#'1' ;move number 1 to accumulator-4
+  331:	  02F8	12 05 0A	call data_wrt
+  332:	  02FB	74 33		mov a,#'3' ;move number 3 to accumulator-5
+  333:	  02FD	12 05 0A	call data_wrt
+  334:	  0300	74 36		mov a,#'6' ;move number 6 to accumulator-6
+  335:	  0302	12 05 0A	call data_wrt
+  336:	  0305	74 34		mov a,#'4' ;move number 4 to accumulator-7
+  337:	  0307	12 05 0A	call data_wrt
+  338:	  030A	74 30		mov a,#'0' ;move number 0 to accumulator-8
+  339:	  030C	12 05 0A	call data_wrt
+  340:	  030F	74 36		mov a,#'6' ;move number 6 to accumulator-9
+  341:	  0311	12 05 0A	call data_wrt
+  342:	  0314	74 36		mov a,#'6' ;move number 6 to accumulator-10
+  343:	  0316	12 05 0A	call data_wrt
+  344:	  0319	22		ret
+  345:
+  346:	  031A			subject:
+  347:	  031A	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  348:	  031C	12 05 18	call cmd_wrt
+  349:
+  350:	  031F	74 45		mov a,#'E' ;move letter E to accumulator-1
+  351:	  0321	12 05 0A	call data_wrt
+  352:	  0324	74 43		mov a,#'C' ;move letter C to accumulator-2
+  353:	  0326	12 05 0A	call data_wrt
+  354:	  0329	74 45		mov a,#'E' ;move letter E to accumulator-3
+  355:	  032B	12 05 0A	call data_wrt
+  356:	  032E	74 20		mov a,#' ' ;move space character to accumulator-4
+  357:	  0330	12 05 0A	call data_wrt
+  358:	  0333	74 34		mov a,#'4' ;move number 4 to accumulator-5
+  359:	  0335	12 05 0A	call data_wrt
+  360:	  0338	74 32		mov a,#'2' ;move number 2 to accumulator-6
+  361:	  033A	12 05 0A	call data_wrt
+  362:	  033D	74 31		mov a,#'1' ;move number 1 to accumulator-7
+  363:	  033F	12 05 0A	call data_wrt
+  364:	  0342	74 20		mov a,#' ' ;move space character to accumulator-8
+  365:	  0344	12 05 0A	call data_wrt
+  366:	  0347	74 50		mov a,#'P' ;move letter P to accumulator-9
+  367:	  0349	12 05 0A	call data_wrt
+  368:	  034C	74 52		mov a,#'R' ;move letter R to accumulator-10
+  369:	  034E	12 05 0A	call data_wrt
+  370:	  0351	74 4F		mov a,#'O' ;move letter O to accumulator-11
+  371:	  0353	12 05 0A	call data_wrt
+  372:	  0356	74 4A		mov a,#'J' ;move letter J to accumulator-12
+  373:	  0358	12 05 0A	call data_wrt
+  374:	  035B	74 45		mov a,#'E' ;move letter E to accumulator-13
+  375:	  035D	12 05 0A	call data_wrt
+  376:	  0360	74 43		mov a,#'C' ;move letter C to accumulator-14
+  377:	  0362	12 05 0A	call data_wrt
+  378:	  0365	74 54		mov a,#'T' ;move letter T to accumulator-15
+  379:	  0367	12 05 0A	call data_wrt
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 8
 
@@ -446,62 +446,62 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  380:	  036A	74 30		mov a,#'0' ;move number 0 to accumulator-2
-  381:	  036C	12 05 00	call data_wrt
-  382:	  036F	74 31		mov a,#'1' ;move number 1 to accumulator-3
-  383:	  0371	12 05 00	call data_wrt
-  384:	  0374	74 31		mov a,#'1' ;move number 1 to accumulator-4
-  385:	  0376	12 05 00	call data_wrt
-  386:	  0379	74 33		mov a,#'3' ;move number 3 to accumulator-5
-  387:	  037B	12 05 00	call data_wrt
-  388:	  037E	74 36		mov a,#'6' ;move number 6 to accumulator-6
-  389:	  0380	12 05 00	call data_wrt
-  390:	  0383	74 34		mov a,#'4' ;move number 4 to accumulator-7
-  391:	  0385	12 05 00	call data_wrt
-  392:	  0388	74 30		mov a,#'0' ;move number 0 to accumulator-8
-  393:	  038A	12 05 00	call data_wrt
-  394:	  038D	74 36		mov a,#'6' ;move number 6 to accumulator-9
-  395:	  038F	12 05 00	call data_wrt
-  396:	  0392	74 36		mov a,#'6' ;move number 6 to accumulator-10
-  397:	  0394	12 05 00	call data_wrt
-  398:	  0397	22		ret
-  399:
-  400:	  0398			subject:
-  401:	  0398	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  402:	  039A	12 05 0E	call cmd_wrt
-  403:
-  404:	  039D	74 45		mov a,#'E' ;move letter E to accumulator-1
-  405:	  039F	12 05 00	call data_wrt
-  406:	  03A2	74 43		mov a,#'C' ;move letter C to accumulator-2
-  407:	  03A4	12 05 00	call data_wrt
-  408:	  03A7	74 45		mov a,#'E' ;move letter E to accumulator-3
-  409:	  03A9	12 05 00	call data_wrt
-  410:	  03AC	74 20		mov a,#' ' ;move space character to accumulator-4
-  411:	  03AE	12 05 00	call data_wrt
-  412:	  03B1	74 34		mov a,#'4' ;move number 4 to accumulator-5
-  413:	  03B3	12 05 00	call data_wrt
-  414:	  03B6	74 32		mov a,#'2' ;move number 2 to accumulator-6
-  415:	  03B8	12 05 00	call data_wrt
-  416:	  03BB	74 31		mov a,#'1' ;move number 1 to accumulator-7
-  417:	  03BD	12 05 00	call data_wrt
-  418:	  03C0	74 20		mov a,#' ' ;move space character to accumulator-8
-  419:	  03C2	12 05 00	call data_wrt
-  420:	  03C5	74 50		mov a,#'P' ;move letter P to accumulator-9
-  421:	  03C7	12 05 00	call data_wrt
-  422:	  03CA	74 52		mov a,#'R' ;move letter R to accumulator-10
-  423:	  03CC	12 05 00	call data_wrt
-  424:	  03CF	74 4F		mov a,#'O' ;move letter O to accumulator-11
-  425:	  03D1	12 05 00	call data_wrt
-  426:	  03D4	74 4A		mov a,#'J' ;move letter J to accumulator-12
-  427:	  03D6	12 05 00	call data_wrt
-  428:	  03D9	74 45		mov a,#'E' ;move letter E to accumulator-13
-  429:	  03DB	12 05 00	call data_wrt
-  430:	  03DE	74 43		mov a,#'C' ;move letter C to accumulator-14
-  431:	  03E0	12 05 00	call data_wrt
-  432:	  03E3	74 54		mov a,#'T' ;move letter T to accumulator-15
-  433:	  03E5	12 05 00	call data_wrt
-  434:	  03E8	22		ret
-  435:
+  380:	  036A	22		ret
+  381:
+  382:	  036B			lecturer:
+  383:	  036B	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  384:	  036D	12 05 18	call cmd_wrt
+  385:
+  386:	  0370	74 4C		mov a,#'L' ;move letter L to accumulator-1
+  387:	  0372	12 05 0A	call data_wrt
+  388:	  0375	74 65		mov a,#'e' ;move letter e to accumulator-2
+  389:	  0377	12 05 0A	call data_wrt
+  390:	  037A	74 63		mov a,#'c' ;move letter c to accumulator-3
+  391:	  037C	12 05 0A	call data_wrt
+  392:	  037F	74 74		mov a,#'t' ;move letter t to accumulator-4
+  393:	  0381	12 05 0A	call data_wrt
+  394:	  0384	74 75		mov a,#'u' ;move letter u to accumulator-5
+  395:	  0386	12 05 0A	call data_wrt
+  396:	  0389	74 72		mov a,#'r' ;move letter r to accumulator-6
+  397:	  038B	12 05 0A	call data_wrt
+  398:	  038E	74 65		mov a,#'e' ;move letter e to accumulator-7
+  399:	  0390	12 05 0A	call data_wrt
+  400:	  0393	74 72		mov a,#'r' ;move letter r to accumulator-8
+  401:	  0395	12 05 0A	call data_wrt
+  402:
+  403:	  0398	74 C0		mov a,#0c0h	;move cursor to second line position 1
+  404:	  039A	12 05 18	call cmd_wrt
+  405:	  039D	74 49		mov a,#'I' ;move letter I to accumulator-2
+  406:	  039F	12 05 0A	call data_wrt
+  407:	  03A2	74 6E		mov a,#'n' ;move letter n to accumulator-3
+  408:	  03A4	12 05 0A	call data_wrt
+  409:	  03A7	74 63		mov a,#'c' ;move letter c to accumulator-4
+  410:	  03A9	12 05 0A	call data_wrt
+  411:	  03AC	74 68		mov a,#'h' ;move letter l to accumulator-5
+  412:	  03AE	12 05 0A	call data_wrt
+  413:	  03B1	74 61		mov a,#'a' ;move letter u to accumulator-6
+  414:	  03B3	12 05 0A	call data_wrt
+  415:	  03B6	74 72		mov a,#'r' ;move letter d to accumulator-7
+  416:	  03B8	12 05 0A	call data_wrt
+  417:	  03BB	74 67		mov a,#'g' ;move letter e to accumulator-8
+  418:	  03BD	12 05 0A	call data_wrt
+  419:	  03C0	74 65		mov a,#'e' ;move letter e to accumulator-9
+  420:	  03C2	12 05 0A	call data_wrt
+  421:	  03C5	74 3A		mov a,#':' ;move the colon character to accumulator-10
+  422:	  03C7	12 05 0A	call data_wrt
+  423:
+  424:	  03CA	12 05 01	call clearscreen
+  425:
+  426:	  03CD	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  427:	  03CF	12 05 18	call cmd_wrt
+  428:
+  429:	  03D2	74 45		mov a,#'E' ;move letter E to accumulator-1
+  430:	  03D4	12 05 0A	call data_wrt
+  431:	  03D7	74 6E		mov a,#'n' ;move letter n to accumulator-2
+  432:	  03D9	12 05 0A	call data_wrt
+  433:	  03DC	74 67		mov a,#'g' ;move letter g to accumulator-3
+  434:	  03DE	12 05 0A	call data_wrt
+  435:	  03E1	74 72		mov a,#'r' ;move letter r to accumulator-4
 
 ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 9
 
@@ -509,62 +509,62 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
 
  Line  I  Addr  Code            Source
 
-  436:	  03E9			lecturer:
-  437:	  03E9	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  438:	  03EB	12 05 0E	call cmd_wrt
+  436:	  03E3	12 05 0A	call data_wrt
+  437:	  03E6	74 2E		mov a,#'.' ;move character . to accumulator-5
+  438:	  03E8	12 05 0A	call data_wrt
   439:
-  440:	  03EE	74 4C		mov a,#'L' ;move letter L to accumulator-1
-  441:	  03F0	12 05 00	call data_wrt
-  442:	  03F3	74 65		mov a,#'e' ;move letter e to accumulator-2
-  443:	  03F5	12 05 00	call data_wrt
-  444:	  03F8	74 63		mov a,#'c' ;move letter c to accumulator-3
-  445:	  03FA	12 05 00	call data_wrt
-  446:	  03FD	74 74		mov a,#'t' ;move letter t to accumulator-4
-  447:	  03FF	12 05 00	call data_wrt
-  448:	  0402	74 75		mov a,#'u' ;move letter u to accumulator-5
-  449:	  0404	12 05 00	call data_wrt
-  450:	  0407	74 72		mov a,#'r' ;move letter r to accumulator-6
-  451:	  0409	12 05 00	call data_wrt
-  452:	  040C	74 65		mov a,#'e' ;move letter e to accumulator-7
-  453:	  040E	12 05 00	call data_wrt
-  454:	  0411	74 72		mov a,#'r' ;move letter r to accumulator-8
-  455:	  0413	12 05 00	call data_wrt
-  456:
-  457:	  0416	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  458:	  0418	12 05 0E	call cmd_wrt
-  459:	  041B	74 49		mov a,#'I' ;move letter I to accumulator-2
-  460:	  041D	12 05 00	call data_wrt
-  461:	  0420	74 6E		mov a,#'n' ;move letter n to accumulator-3
-  462:	  0422	12 05 00	call data_wrt
-  463:	  0425	74 63		mov a,#'c' ;move letter c to accumulator-4
-  464:	  0427	12 05 00	call data_wrt
-  465:	  042A	74 68		mov a,#'h' ;move letter l to accumulator-5
-  466:	  042C	12 05 00	call data_wrt
-  467:	  042F	74 61		mov a,#'a' ;move letter u to accumulator-6
-  468:	  0431	12 05 00	call data_wrt
-  469:	  0434	74 72		mov a,#'r' ;move letter d to accumulator-7
-  470:	  0436	12 05 00	call data_wrt
-  471:	  0439	74 67		mov a,#'g' ;move letter e to accumulator-8
-  472:	  043B	12 05 00	call data_wrt
-  473:	  043E	74 65		mov a,#'e' ;move letter e to accumulator-9
-  474:	  0440	12 05 00	call data_wrt
-  475:	  0443	74 3A		mov a,#':' ;move the colon character to accumulator-10
-  476:	  0445	12 05 00	call data_wrt
-  477:
-  478:	  0448	12 04 F7	call clearscreen
-  479:
-  480:	  044B	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  481:	  044D	12 05 0E	call cmd_wrt
-  482:
-  483:	  0450	74 45		mov a,#'E' ;move letter E to accumulator-1
-  484:	  0452	12 05 00	call data_wrt
-  485:	  0455	74 6E		mov a,#'n' ;move letter n to accumulator-2
-  486:	  0457	12 05 00	call data_wrt
-  487:	  045A	74 67		mov a,#'g' ;move letter g to accumulator-3
-  488:	  045C	12 05 00	call data_wrt
-  489:	  045F	74 72		mov a,#'r' ;move letter r to accumulator-4
-  490:	  0461	12 05 00	call data_wrt
-  491:	  0464	74 2E		mov a,#'.' ;move character . to accumulator-5
+  440:	  03EB	74 C0		mov a,#0c0h	;move cursor to second line position 1
+  441:	  03ED	12 05 18	call cmd_wrt
+  442:	  03F0	74 41		mov a,#'A' ;move letter A to accumulator-2
+  443:	  03F2	12 05 0A	call data_wrt
+  444:	  03F5	74 7A		mov a,#'z' ;move letter z to accumulator-3
+  445:	  03F7	12 05 0A	call data_wrt
+  446:	  03FA	74 75		mov a,#'u' ;move letter u to accumulator-4
+  447:	  03FC	12 05 0A	call data_wrt
+  448:	  03FF	74 62		mov a,#'b' ;move letter b to accumulator-5
+  449:	  0401	12 05 0A	call data_wrt
+  450:	  0404	74 69		mov a,#'i' ;move letter i to accumulator-6
+  451:	  0406	12 05 0A	call data_wrt
+  452:	  0409	74 6B		mov a,#'k' ;move letter k to accumulator-7
+  453:	  040B	12 05 0A	call data_wrt
+  454:	  040E	74 65		mov a,#'e' ;move letter e to accumulator-8
+  455:	  0410	12 05 0A	call data_wrt
+  456:	  0413	74 20		mov a,#' ' ;move space character to accumulator-9
+  457:	  0415	12 05 0A	call data_wrt
+  458:	  0418	74 41		mov a,#'A' ;move letter A to accumulator-10
+  459:	  041A	12 05 0A	call data_wrt
+  460:	  041D	74 6E		mov a,#'n' ;move letter n to accumulator-11
+  461:	  041F	12 05 0A	call data_wrt
+  462:	  0422	74 69		mov a,#'i' ;move letter i to accumulator-12
+  463:	  0424	12 05 0A	call data_wrt
+  464:	  0427	74 65		mov a,#'e' ;move letter e to accumulator-13
+  465:	  0429	12 05 0A	call data_wrt
+  466:	  042C	74 64		mov a,#'d' ;move letter d to accumulator-14
+  467:	  042E	12 05 0A	call data_wrt
+  468:	  0431	74 75		mov a,#'u' ;move letter u to accumulator-15
+  469:	  0433	12 05 0A	call data_wrt
+  470:	  0436	22		ret
+  471:
+  472:	  0437			endline:
+  473:	  0437	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  474:	  0439	12 05 18	call cmd_wrt
+  475:
+  476:	  043C	74 54		mov a,#'T' ;move letter T to accumulator-1
+  477:	  043E	12 05 0A	call data_wrt
+  478:	  0441	74 48		mov a,#'H' ;move letter H to accumulator-2
+  479:	  0443	12 05 0A	call data_wrt
+  480:	  0446	74 41		mov a,#'A' ;move letter A to accumulator-3
+  481:	  0448	12 05 0A	call data_wrt
+  482:	  044B	74 4E		mov a,#'N' ;move letter N to accumulator-4
+  483:	  044D	12 05 0A	call data_wrt
+  484:	  0450	74 4B		mov a,#'K' ;move letter K to accumulator-5
+  485:	  0452	12 05 0A	call data_wrt
+  486:	  0455	74 20		mov a,#' ' ;move space character to accumulator-6
+  487:	  0457	12 05 0A	call data_wrt
+  488:	  045A	74 59		mov a,#'Y' ;move letter Y to accumulator-7
+  489:	  045C	12 05 0A	call data_wrt
+  490:	  045F	74 4F		mov a,#'O' ;move letter O to accumulator-8
+  491:	  0461	12 05 0A	call data_wrt
 
 ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. Heinz                                         PAGE 10
 
@@ -572,62 +572,62 @@ ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. H
 
  Line  I  Addr  Code            Source
 
-  492:	  0466	12 05 00	call data_wrt
-  493:
-  494:	  0469	74 C0		mov a,#0c0h	;move cursor to second line position 1
-  495:	  046B	12 05 0E	call cmd_wrt
-  496:	  046E	74 41		mov a,#'A' ;move letter A to accumulator-2
-  497:	  0470	12 05 00	call data_wrt
-  498:	  0473	74 7A		mov a,#'z' ;move letter z to accumulator-3
-  499:	  0475	12 05 00	call data_wrt
-  500:	  0478	74 75		mov a,#'u' ;move letter u to accumulator-4
-  501:	  047A	12 05 00	call data_wrt
-  502:	  047D	74 62		mov a,#'b' ;move letter b to accumulator-5
-  503:	  047F	12 05 00	call data_wrt
-  504:	  0482	74 69		mov a,#'i' ;move letter i to accumulator-6
-  505:	  0484	12 05 00	call data_wrt
-  506:	  0487	74 6B		mov a,#'k' ;move letter k to accumulator-7
-  507:	  0489	12 05 00	call data_wrt
-  508:	  048C	74 65		mov a,#'e' ;move letter e to accumulator-8
-  509:	  048E	12 05 00	call data_wrt
-  510:	  0491	74 20		mov a,#' ' ;move space character to accumulator-9
-  511:	  0493	12 05 00	call data_wrt
-  512:	  0496	74 41		mov a,#'A' ;move letter A to accumulator-10
-  513:	  0498	12 05 00	call data_wrt
-  514:	  049B	74 6E		mov a,#'n' ;move letter n to accumulator-11
-  515:	  049D	12 05 00	call data_wrt
-  516:	  04A0	74 69		mov a,#'i' ;move letter i to accumulator-12
-  517:	  04A2	12 05 00	call data_wrt
-  518:	  04A5	74 65		mov a,#'e' ;move letter e to accumulator-13
-  519:	  04A7	12 05 00	call data_wrt
-  520:	  04AA	74 64		mov a,#'d' ;move letter d to accumulator-14
-  521:	  04AC	12 05 00	call data_wrt
-  522:	  04AF	74 75		mov a,#'u' ;move letter u to accumulator-15
-  523:	  04B1	12 05 00	call data_wrt
-  524:	  04B4	22		ret
-  525:
-  526:	  04B5			endline:
-  527:	  04B5	74 80		mov a,#80h ;force cursor to the beginning of the first line
-  528:	  04B7	12 05 0E	call cmd_wrt
-  529:
-  530:	  04BA	74 54		mov a,#'T' ;move letter T to accumulator-1
-  531:	  04BC	12 05 00	call data_wrt
-  532:	  04BF	74 48		mov a,#'H' ;move letter H to accumulator-2
-  533:	  04C1	12 05 00	call data_wrt
-  534:	  04C4	74 41		mov a,#'A' ;move letter A to accumulator-3
-  535:	  04C6	12 05 00	call data_wrt
-  536:	  04C9	74 4E		mov a,#'N' ;move letter N to accumulator-4
-  537:	  04CB	12 05 00	call data_wrt
-  538:	  04CE	74 4B		mov a,#'K' ;move letter K to accumulator-5
-  539:	  04D0	12 05 00	call data_wrt
-  540:	  04D3	74 20		mov a,#' ' ;move space character to accumulator-6
-  541:	  04D5	12 05 00	call data_wrt
-  542:	  04D8	74 59		mov a,#'Y' ;move letter Y to accumulator-7
-  543:	  04DA	12 05 00	call data_wrt
-  544:	  04DD	74 4F		mov a,#'O' ;move letter O to accumulator-8
-  545:	  04DF	12 05 00	call data_wrt
-  546:	  04E2	74 55		mov a,#'U' ;move letter U to accumulator-9
-  547:	  04E4	12 05 00	call data_wrt
+  492:	  0464	74 55		mov a,#'U' ;move letter U to accumulator-9
+  493:	  0466	12 05 0A	call data_wrt
+  494:	  0469	74 21		mov a,#'!' ;move character ! to accumulator-7
+  495:	  046B	12 05 0A	call data_wrt
+  496:	  046E	74 21		mov a,#'!' ;move character ! to accumulator-8
+  497:	  0470	12 05 0A	call data_wrt
+  498:	  0473	74 21		mov a,#'!' ;move character ! to accumulator-9
+  499:	  0475	12 05 0A	call data_wrt
+  500:	  0478	22		ret
+  501:
+  502:	  0479			first_name:
+  503:	  0479	74 80		mov a,#80h ;force cursor to the beginning of the first line
+  504:	  047B	12 05 18	call cmd_wrt
+  505:	  047E	74 4D		mov a,#'M' ;move letter M to accumulator-1
+  506:	  0480	12 05 0A	call data_wrt
+  507:	  0483	74 6F		mov a,#'o' ;move letter o to accumulator-2
+  508:	  0485	12 05 0A	call data_wrt
+  509:	  0488	74 6D		mov a,#'m' ;move letter m to accumulator-3
+  510:	  048A	12 05 0A	call data_wrt
+  511:	  048D	74 61		mov a,#'a' ;move letter a to accumulator-4
+  512:	  048F	12 05 0A	call data_wrt
+  513:	  0492	74 68		mov a,#'h' ;move letter h to accumulator-5
+  514:	  0494	12 05 0A	call data_wrt
+  515:	  0497	74 20		mov a,#' ' ;move space character to accumulator-6
+  516:	  0499	12 05 0A	call data_wrt
+  517:	  049C	74 4F		mov a,#'O' ;move letter O to accumulator-7
+  518:	  049E	12 05 0A	call data_wrt
+  519:	  04A1	74 62		mov a,#'b' ;move letter b to accumulator-8
+  520:	  04A3	12 05 0A	call data_wrt
+  521:	  04A6	74 69		mov a,#'i' ;move letter i to accumulator-9
+  522:	  04A8	12 05 0A	call data_wrt
+  523:	  04AB	74 6E		mov a,#'n' ;move letter n to accumulator-10
+  524:	  04AD	12 05 0A	call data_wrt
+  525:	  04B0	74 6E		mov a,#'n' ;move letter n to accumulator-11
+  526:	  04B2	12 05 0A	call data_wrt
+  527:	  04B5	74 61		mov a,#'a' ;move letter a to accumulator-12
+  528:	  04B7	12 05 0A	call data_wrt
+  529:	  04BA	74 20		mov a,#' ' ;move space character to accumulator-13
+  530:	  04BC	12 05 0A	call data_wrt
+  531:	  04BF	74 47		mov a,#'G' ;move letter S to accumulator-14
+  532:	  04C1	12 05 0A	call data_wrt
+  533:	  04C4	74 2E		mov a,#'.' ;move the full-stop character to accumulator-15
+  534:	  04C6	12 05 0A	call data_wrt
+  535:
+  536:	  04C9	74 C0		mov a,#0c0h	;move cursor to second line position 1
+  537:	  04CB	12 05 18	call cmd_wrt
+  538:	  04CE	74 32		mov a,#'2' ;move number 2 to accumulator-1
+  539:	  04D0	12 05 0A	call data_wrt
+  540:	  04D3	74 30		mov a,#'0' ;move number 0 to accumulator-2
+  541:	  04D5	12 05 0A	call data_wrt
+  542:	  04D8	74 31		mov a,#'1' ;move number 1 to accumulator-3
+  543:	  04DA	12 05 0A	call data_wrt
+  544:	  04DD	74 31		mov a,#'1' ;move number 1 to accumulator-4
+  545:	  04DF	12 05 0A	call data_wrt
+  546:	  04E2	74 33		mov a,#'3' ;move number 3 to accumulator-5
+  547:	  04E4	12 05 0A	call data_wrt
 
 ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. Heinz                                         PAGE 11
 
@@ -635,62 +635,62 @@ ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. H
 
  Line  I  Addr  Code            Source
 
-  548:	  04E7	74 21		mov a,#'!' ;move character ! to accumulator-7
-  549:	  04E9	12 05 00	call data_wrt
-  550:	  04EC	74 21		mov a,#'!' ;move character ! to accumulator-8
-  551:	  04EE	12 05 00	call data_wrt
-  552:	  04F1	74 21		mov a,#'!' ;move character ! to accumulator-9
-  553:	  04F3	12 05 00	call data_wrt
-  554:	  04F6	22		ret
-  555:
-  556:	  04F7			clearscreen:
-  557:	  04F7	12 05 3C	call slow_delay
-  558:	  04FA	74 01		mov a,#01h ;clear screen of the lcd
-  559:	  04FC	12 05 1C	call cmd_wrt_2
-  560:	  04FF	22		ret
-  561:
-  562:
-  563:	  0500			data_wrt:
-  564:	  0500	F5 90		mov p1,a ;move contents of the accumulator to port P1
-  565:	  0502	D2 B0		setb RS	;set bit on RS to enable data mode on the LCD
-  566:	  0504	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
-  567:	  0506	D2 B2		setb e ;setb bit on e to start the engaging transition
-  568:	  0508	12 05 2A	call delay_wrt
-  569:	  050B	C2 B2		clr e ;clear bit on e to end the engaging transitioin
-  570:	  050D	22		ret
-  571:
-  572:	  050E			cmd_wrt:
-  573:	  050E	F5 90		mov p1,a ;move contents of the accumulator to port P1
-  574:	  0510	C2 B0		clr RS	;clear bit on RS to enable command mode on the LCD
-  575:	  0512	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
-  576:	  0514	D2 B2		setb e ;setb bit on e to start the engaging transition
-  577:	  0516	12 05 2A	call delay_wrt
-  578:	  0519	C2 B2		clr e ;clear bit on e to end the engaging transitioin
-  579:	  051B	22		ret
-  580:
-  581:	  051C			cmd_wrt_2:
-  582:	  051C	F5 90		mov p1,a ;move contents of the accumulator to port P1
-  583:	  051E	C2 B0		clr RS	;clear bit on RS to enable command mode on the LCD
-  584:	  0520	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
-  585:	  0522	D2 B2		setb e ;setb bit on e to start the engaging transition
-  586:	  0524	12 05 33	call delay_clr
-  587:	  0527	C2 B2		clr e ;clear bit on e to end the engaging transitioin
-  588:	  0529	22		ret
-  589:
-  590:	  052A			delay_wrt:
-  591:	  052A	79 8B		Mov R1,#139
-  592:	  052C	7A C3		Mov R2,#195
-  593:	  052E			MEG:
-  594:	  052E	D9 FE		Djnz R1,MEG
-  595:	  0530	DA FC		Djnz R2,MEG
-  596:	  0532	22		ret
-  597:
-  598:	  0533			delay_clr:
-  599:	  0533	79 72		Mov R1,#114
-  600:	  0535	7A 14		Mov R2,#20
-  601:	  0537			MEG_1:
-  602:	  0537	D9 FE		Djnz R1,MEG_1
-  603:	  0539	DA FC		Djnz R2,MEG_1
+  548:	  04E7	74 36		mov a,#'6' ;move number 6 to accumulator-6
+  549:	  04E9	12 05 0A	call data_wrt
+  550:	  04EC	74 34		mov a,#'4' ;move number 4 to accumulator-7
+  551:	  04EE	12 05 0A	call data_wrt
+  552:	  04F1	74 30		mov a,#'0' ;move number 0 to accumulator-8
+  553:	  04F3	12 05 0A	call data_wrt
+  554:	  04F6	74 30		mov a,#'0' ;move number 0 to accumulator-9
+  555:	  04F8	12 05 0A	call data_wrt
+  556:	  04FB	74 39		mov a,#'9' ;move number 9 to accumulator-10
+  557:	  04FD	12 05 0A	call data_wrt
+  558:	  0500	22		ret
+  559:
+  560:	  0501			clearscreen:
+  561:	  0501	12 05 46	call slow_delay
+  562:	  0504	74 01		mov a,#01h ;clear screen of the lcd
+  563:	  0506	12 05 26	call cmd_wrt_2
+  564:	  0509	22		ret
+  565:
+  566:
+  567:	  050A			data_wrt:
+  568:	  050A	F5 90		mov p1,a ;move contents of the accumulator to port P1
+  569:	  050C	D2 B0		setb RS	;set bit on RS to enable data mode on the LCD
+  570:	  050E	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
+  571:	  0510	D2 B2		setb e ;setb bit on e to start the engaging transition
+  572:	  0512	12 05 34	call delay_wrt
+  573:	  0515	C2 B2		clr e ;clear bit on e to end the engaging transitioin
+  574:	  0517	22		ret
+  575:
+  576:	  0518			cmd_wrt:
+  577:	  0518	F5 90		mov p1,a ;move contents of the accumulator to port P1
+  578:	  051A	C2 B0		clr RS	;clear bit on RS to enable command mode on the LCD
+  579:	  051C	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
+  580:	  051E	D2 B2		setb e ;setb bit on e to start the engaging transition
+  581:	  0520	12 05 34	call delay_wrt
+  582:	  0523	C2 B2		clr e ;clear bit on e to end the engaging transitioin
+  583:	  0525	22		ret
+  584:
+  585:	  0526			cmd_wrt_2:
+  586:	  0526	F5 90		mov p1,a ;move contents of the accumulator to port P1
+  587:	  0528	C2 B0		clr RS	;clear bit on RS to enable command mode on the LCD
+  588:	  052A	C2 B1		clr RW ;clear bit on RW to enable write mode on the LCD
+  589:	  052C	D2 B2		setb e ;setb bit on e to start the engaging transition
+  590:	  052E	12 05 3D	call delay_clr
+  591:	  0531	C2 B2		clr e ;clear bit on e to end the engaging transitioin
+  592:	  0533	22		ret
+  593:
+  594:	  0534			delay_wrt:
+  595:	  0534	79 8B		Mov R1,#139
+  596:	  0536	7A C3		Mov R2,#195
+  597:	  0538			MEG:
+  598:	  0538	D9 FE		Djnz R1,MEG
+  599:	  053A	DA FC		Djnz R2,MEG
+  600:	  053C	22		ret
+  601:
+  602:	  053D			delay_clr:
+  603:	  053D	79 72		Mov R1,#114
 
 ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. Heinz                                         PAGE 12
 
@@ -698,19 +698,23 @@ ASEM-51 V1.3                                        Copyright (c) 2002 by W.W. H
 
  Line  I  Addr  Code            Source
 
-  604:	  053B	22		ret
-  605:
-  606:	  053C			slow_delay:
-  607:	  053C	79 7C		Mov R1,#124
-  608:	  053E	7A 9A		Mov R2,#154
-  609:	  0540	7B 08		Mov R3,#8
-  610:	  0542			MEG_2:
-  611:	  0542	D9 FE		Djnz R1,MEG_2
-  612:	  0544	DA FC		Djnz R2,MEG_2
-  613:	  0546	DB FA		Djnz R3,MEG_2
-  614:	  0548	22		ret
-  615:
-  616:				end
+  604:	  053F	7A 14		Mov R2,#20
+  605:	  0541			MEG_1:
+  606:	  0541	D9 FE		Djnz R1,MEG_1
+  607:	  0543	DA FC		Djnz R2,MEG_1
+  608:	  0545	22		ret
+  609:
+  610:	  0546			slow_delay:
+  611:	  0546	79 7C		Mov R1,#124
+  612:	  0548	7A 9A		Mov R2,#154
+  613:	  054A	7B 08		Mov R3,#8
+  614:	  054C			MEG_2:
+  615:	  054C	D9 FE		Djnz R1,MEG_2
+  616:	  054E	DA FC		Djnz R2,MEG_2
+  617:	  0550	DB FA		Djnz R3,MEG_2
+  618:	  0552	22		ret
+  619:
+  620:				end
 
 
 
@@ -740,18 +744,18 @@ SYMBOL				  TYPE     VALUE	LINE
 AC				  BIT	      D6
 ACC				  DATA	      E0
 B				  DATA	      F0
-CLEARSCREEN			  CODE	    04F7	 556
-CMD_WRT				  CODE	    050E	 572
-CMD_WRT_2			  CODE	    051C	 581
+CLEARSCREEN			  CODE	    0501	 560
+CMD_WRT				  CODE	    0518	 576
+CMD_WRT_2			  CODE	    0526	 585
 CY				  BIT	      D7
-DATA_WRT			  CODE	    0500	 563
-DELAY_CLR			  CODE	    0533	 598
-DELAY_WRT			  CODE	    052A	 590
+DATA_WRT			  CODE	    050A	 567
+DELAY_CLR			  CODE	    053D	 602
+DELAY_WRT			  CODE	    0534	 594
 DPH				  DATA	      83
 DPL				  DATA	      82
 E				  BIT	      B2	   6
 EA				  BIT	      AF
-ENDLINE				  CODE	    04B5	 526
+ENDLINE				  CODE	    0437	 472
 ES				  BIT	      AC
 ET0				  BIT	      A9
 ET1				  BIT	      AB
@@ -760,9 +764,9 @@ EX1				  BIT	      AA
 EXTI0				  CODE	    0003
 EXTI1				  CODE	    0013
 F0				  BIT	      D5
-FIFTH_NAME			  CODE	    030B	 339
-FIRST_NAME			  CODE	    00F5	 111
-FOURTH_NAME			  CODE	    0283	 281
+FIFTH_NAME			  CODE	    028D	 285
+FIRST_NAME			  CODE	    0479	 502
+FOURTH_NAME			  CODE	    0205	 227
 IE				  DATA	      A8
 IE0				  BIT	      89
 IE1				  BIT	      8B
@@ -771,11 +775,11 @@ INT1				  BIT	      B3
 IP				  DATA	      B8
 IT0				  BIT	      88
 IT1				  BIT	      8A
-LECTURER			  CODE	    03E9	 436
+LECTURER			  CODE	    036B	 382
 MAIN				  CODE	    004C	  39
-MEG				  CODE	    052E	 593
-MEG_1				  CODE	    0537	 601
-MEG_2				  CODE	    0542	 610
+MEG				  CODE	    0538	 597
+MEG_1				  CODE	    0541	 605
+MEG_2				  CODE	    054C	 614
 OV				  BIT	      D2
 P				  BIT	      D0
 P0				  DATA	      80
@@ -808,15 +812,15 @@ RW				  BIT	      B1	   5
 RXD				  BIT	      B0
 SBUF				  DATA	      99
 SCON				  DATA	      98
-SECOND_NAME			  CODE	    0178	 167
+SECOND_NAME			  CODE	    00F5	 111
 SINT				  CODE	    0023
-SLOW_DELAY			  CODE	    053C	 606
+SLOW_DELAY			  CODE	    0546	 610
 SM0				  BIT	      9F
 SM1				  BIT	      9E
 SM2				  BIT	      9D
 SP				  DATA	      81
 START				  CODE	    0014	  18
-SUBJECT				  CODE	    0398	 400
+SUBJECT				  CODE	    031A	 346
 T0				  BIT	      B4
 T1				  BIT	      B5
 TB8				  BIT	      9B
@@ -825,7 +829,7 @@ TF0				  BIT	      8D
 TF1				  BIT	      8F
 TH0				  DATA	      8C
 TH1				  DATA	      8D
-THIRD_NAME			  CODE	    0205	 227
+THIRD_NAME			  CODE	    0178	 167
 TI				  BIT	      99
 TIMER0				  CODE	    000B
 TIMER1				  CODE	    001B
