@@ -1,0 +1,294 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	C:\Users\-k0$ma3-\Documents\Assembly\project_VI\keypad.asm
+	Object File:	C:\Users\-k0$ma3-\Documents\Assembly\project_VI\keypad.hex
+	List File:	C:\Users\-k0$ma3-\Documents\Assembly\project_VI\keypad.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:		N      0000	org 000h
+    2:
+    3:	  0000	12 00 AB	call initialize
+    4:
+    5:	  0003			start:
+    6:	  0003	75 A0 BF	mov p2,#10111111b	;clear p2.6
+    7:	  0006	20 A0 0A	jb p2.0,numberFour	;jump to number 4 if p2.0 is set
+    8:	  0009	74 01		mov a,#01h			;clear lcd screen
+    9:	  000B	12 00 C0	call cmd_wrt
+   10:	  000E	74 31		mov a,#'1'			;show 1 on lcd screen
+   11:	  0010	12 00 CE	call data_wrt
+   12:
+   13:	  0013			numberFour:
+   14:	  0013	20 A1 0A	jb p2.1,numberSeven	;jump to number 7 if p2.1 is set
+   15:	  0016	74 01		mov a,#01h			;clear lcd screen
+   16:	  0018	12 00 C0	call cmd_wrt
+   17:	  001B	74 34		mov a,#'4'			;show 4 on lcd screen
+   18:	  001D	12 00 CE	call data_wrt
+   19:
+   20:	  0020			numberSeven:
+   21:	  0020	20 A2 0A	jb p2.2,astericks	;jump to astericks if p2.2 is set
+   22:	  0023	74 01		mov a,#01h			;clear lcd screen
+   23:	  0025	12 00 C0	call cmd_wrt
+   24:	  0028	74 37		mov a,#'7'			;show 7 on lcd screen
+   25:	  002A	12 00 CE	call data_wrt
+   26:
+   27:	  002D			astericks:
+   28:	  002D	20 A3 0A	jb p2.3,numberTwo	;jump to number 2 if p2.3 is set
+   29:	  0030	74 01		mov a,#01h			;clear lcd screen
+   30:	  0032	12 00 C0	call cmd_wrt
+   31:	  0035	74 2A		mov a,#'*'			;show * on lcd screen
+   32:	  0037	12 00 CE	call data_wrt
+   33:
+   34:	  003A			numberTwo:
+   35:	  003A	75 A0 DF	mov p2,#11011111b	;clear p2.5
+   36:	  003D	20 A0 0A	jb p2.0,numberFive	;jump to number 5 if p2.0 is set
+   37:	  0040	74 01		mov a,#01h			;clear lcd screen
+   38:	  0042	12 00 C0	call cmd_wrt
+   39:	  0045	74 32		mov a,#'2'			;show 2 on lcd screen
+   40:	  0047	12 00 CE	call data_wrt
+   41:
+   42:	  004A			numberFive:
+   43:	  004A	20 A1 0A	jb p2.1,numberEight	;jump to number 8 if p2.1 is set
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+ Line  I  Addr  Code            Source
+
+   44:	  004D	74 01		mov a,#01h			;clear lcd screen
+   45:	  004F	12 00 C0	call cmd_wrt
+   46:	  0052	74 35		mov a,#'5'			;show 5 on lcd screen
+   47:	  0054	12 00 CE	call data_wrt
+   48:
+   49:	  0057			numberEight:
+   50:	  0057	20 A2 0A	jb p2.2,zero		;jump to 0 if p2.2 is set
+   51:	  005A	74 01		mov a,#01h			;clear lcd screen
+   52:	  005C	12 00 C0	call cmd_wrt
+   53:	  005F	74 38		mov a,#'8'			;show 8 on lcd screen
+   54:	  0061	12 00 CE	call data_wrt
+   55:
+   56:	  0064			zero:
+   57:	  0064	20 A3 0A	jb p2.3,numberThree	;jump to number 3 if p2.3 is set
+   58:	  0067	74 01		mov a,#01h			;clear lcd screen
+   59:	  0069	12 00 C0	call cmd_wrt
+   60:	  006C	74 30		mov a,#'0'			;show 0 on lcd screen
+   61:	  006E	12 00 CE	call data_wrt
+   62:
+   63:	  0071			numberThree:
+   64:	  0071	75 A0 EF	mov p2,#11101111b	;clear p2.4
+   65:	  0074	20 A0 0A	jb p2.0,numberSix	;jump to number 6 if p2.0 is set
+   66:	  0077	74 01		mov a,#01h			;clear lcd screen
+   67:	  0079	12 00 C0	call cmd_wrt
+   68:	  007C	74 33		mov a,#'3'			;show 3 on lcd screen
+   69:	  007E	12 00 CE	call data_wrt
+   70:
+   71:	  0081			numberSix:
+   72:	  0081	20 A1 0A	jb p2.1,numberNine	;jump to number 9 if p2.1 is set
+   73:	  0084	74 01		mov a,#01h			;clear lcd screen
+   74:	  0086	12 00 C0	call cmd_wrt
+   75:	  0089	74 36		mov a,#'6'			;show 6 on lcd screen
+   76:	  008B	12 00 CE	call data_wrt
+   77:
+   78:	  008E			numberNine:
+   79:	  008E	20 A2 0A	jb p2.2,hash		;jump to hash if p2.2 is set
+   80:	  0091	74 01		mov a,#01h			;clear lcd screen
+   81:	  0093	12 00 C0	call cmd_wrt
+   82:	  0096	74 39		mov a,#'9'			;show 9 on lcd screen
+   83:	  0098	12 00 CE	call data_wrt
+   84:
+   85:	  009B			hash:
+   86:	  009B	20 A3 0A	jb p2.3,virtual_start ;jump to virtual_start if p2.3 is set
+   87:	  009E	74 01		mov a,#01h			;clear lcd screen
+   88:	  00A0	12 00 C0	call cmd_wrt
+   89:	  00A3	74 23		mov a,#'#'			;show # on lcd screen
+   90:	  00A5	12 00 CE	call data_wrt
+   91:
+   92:	  00A8			virtual_start:
+   93:	  00A8	01 03		jmp start
+   94:	  00AA	22		ret
+   95:
+   96:	  00AB			initialize:
+   97:		B	 B0	RS bit p3.0 	;set variable RS to p3.0
+   98:		B	 B1	RW bit p3.1 	;set variable RW to p3.1
+   99:		B	 B2	e bit p3.2 		;set variable e to p3.2
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+ Line  I  Addr  Code            Source
+
+  100:
+  101:	  00AB	74 38		mov a,#38h		;use two lines and 5x7 matrix
+  102:	  00AD	12 00 C0	call cmd_wrt
+  103:	  00B0	74 80		mov a,#80h 		;force cursor to the beginning of the first line
+  104:	  00B2	12 00 C0	call cmd_wrt
+  105:	  00B5	74 0E		mov a,#0eh 		;display ON, cursor ON
+  106:	  00B7	12 00 C0	call cmd_wrt
+  107:	  00BA	74 14		mov a,#14h 		;shift cursor postion to the right
+  108:	  00BC	12 00 C0	call cmd_wrt
+  109:	  00BF	22		ret
+  110:
+  111:	  00C0			cmd_wrt:
+  112:	  00C0	F5 90		mov p1,a		;move contents of the accumulator to port P1
+  113:	  00C2	C2 B0		clr RS			;clear bit on RS to enable command mode on the LCD
+  114:	  00C4	C2 B1		clr RW 			;clear bit on RW to enable write mode on the LCD
+  115:	  00C6	D2 B2		setb e 			;setb bit on e to start the engaging transition
+  116:	  00C8	12 00 DC	call delay
+  117:	  00CB	C2 B2		clr e 			;clear bit on e to end the engaging transitioin
+  118:	  00CD	22		ret
+  119:
+  120:	  00CE			data_wrt:
+  121:	  00CE	F5 90		mov p1,a		;move contents of the accumulator to port P1
+  122:	  00D0	D2 B0		setb RS			;set bit on RS to enable data mode on the LCD
+  123:	  00D2	C2 B1		clr RW			;clear bit on RW to enable write mode on the LCD
+  124:	  00D4	D2 B2		setb e			;setb bit on e to start the engaging transition
+  125:	  00D6	12 00 DC	call delay
+  126:	  00D9	C2 B2		clr e			;clear bit on e to end the engaging transitioin
+  127:	  00DB	22		ret
+  128:
+  129:	  00DC			delay:
+  130:	  00DC	79 E2		PET:Mov R1,#226
+  131:	  00DE	7A 04		    Mov R2,#4
+  132:	  00E0	D9 FE		MEG:Djnz R1,MEG
+  133:	  00E2	DA FC		    Djnz R2,MEG
+  134:	  00E4	22		ret
+  135:
+  136:				end
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 4
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+ASTERICKS			  CODE	    002D	  27
+B				  DATA	      F0
+CMD_WRT				  CODE	    00C0	 111
+CY				  BIT	      D7
+DATA_WRT			  CODE	    00CE	 120
+DELAY				  CODE	    00DC	 129
+DPH				  DATA	      83
+DPL				  DATA	      82
+E				  BIT	      B2	  99
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+HASH				  CODE	    009B	  85
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INITIALIZE			  CODE	    00AB	  96
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+MEG				  CODE	    00E0	 132
+NUMBEREIGHT			  CODE	    0057	  49
+NUMBERFIVE			  CODE	    004A	  42
+NUMBERFOUR			  CODE	    0013	  13
+NUMBERNINE			  CODE	    008E	  78
+NUMBERSEVEN			  CODE	    0020	  20
+NUMBERSIX			  CODE	    0081	  71
+NUMBERTHREE			  CODE	    0071	  63
+NUMBERTWO			  CODE	    003A	  34
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PET				  CODE	    00DC	 130
+PS				  BIT	      BC
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 5
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+RI				  BIT	      98
+RS				  BIT	      B0	  97
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+RW				  BIT	      B1	  98
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+SCON				  DATA	      98
+SINT				  CODE	    0023
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0003	   5
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TXD				  BIT	      B1
+VIRTUAL_START			  CODE	    00A8	  92
+WR				  BIT	      B6
+ZERO				  CODE	    0064	  56
